@@ -25,21 +25,41 @@
     </div>
 </div>
   
-  <!-- Intro -->
-  <div class="container-fluid intro">
-    <div class="row">
-      <div class="col-md-4 photo-container">
-        <span class="photo rounded-circle"></span>
-      </div>
-      <div class="col-md-7 intro"> 
-        <div class="intro"></div>
-        <h1 class="display-6">Repostería casera desde el 1998</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+
+<!-- Intro -->
+<div class="container-fluid intro my-4">
+  <div class="row">
+    <div class="col-md-4 photo-container">
+      <span class="photo rounded-circle mx-auto mb-4"></span>
+    </div>
+    <div class="col-md-8 d-flex"> 
+      <div class="d-flex flex-row align-items-center">
+        <div class="p-5">  
+          <h2 class="display-6 d-block">Soy Cecilia Ponce</h2>
+          <p class="d-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+        </div>
       </div>
     </div>
   </div>
+</div>
 
-
+<!-- Reel -->
+<div class="container-fluid reel my-4">
+  <div class="row">
+    <div class="col-md-6 d-flex"> 
+      <div class="d-flex flex-row align-items-center">
+        <div class="p-5">  
+          <h2 class="display-6 d-block">Un poco de mi cocina</h2>
+          <h2 class="display-7 d-block">Horneado Casero</h2>
+          <p class="d-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus sed fuga delectus dolores laudantium magni laborum doloremque dolore, ab explicabo sint exercitationem iure molestias dignissimos, dolorem quidem eius ad consequatur.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2 d-md-flex align-items-center"><span class="reel-img w-100 h-25 d-block"></span></div>
+    <div class="col-md-2 d-md-flex align-items-center"><span class="reel-img w-100 h-25 d-block"></span></div>
+    <div class="col-md-2 d-md-flex align-items-center"><span class="reel-img w-100 h-25 d-block"></span></div>
+  </div>
+</div>
 
   <!-- Catalog -->
 
@@ -79,7 +99,7 @@ export default {
   display: block;
   width: 15em;
   height: 15em;
-  background-color: aqua;
+  background-color: #4E4E4E;
 }
 
 .photo-container {
@@ -87,8 +107,22 @@ export default {
 }
 
 .intro>* {
+  margin-left: 1rem;
   text-align: left;
 }
+
+.reel {
+  background-color: #D6D6D6;
+}
+
+.reel>* {
+  text-align: right;
+}
+
+.reel-img {
+  background-color: #4E4E4E;
+}
+
 
 .logo {
   display: block;
