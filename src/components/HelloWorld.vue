@@ -32,6 +32,7 @@
         <span class="photo rounded-circle"></span>
       </div>
       <div class="col-md-7 intro"> 
+        <div class="intro"></div>
         <h1 class="display-6">Repostería casera desde el 1998</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
       </div>
