@@ -1,33 +1,47 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+<div class="masthead container-fluid bg-dark text-white py-5 mb-4">
+  <!-- Masthead -->
+    <span class="logo mx-auto rounded-circle mb-4"></span>
+    <h1 class="display-6">Repostería casera desde el 1998</h1>
+    <div class="w-75 mx-auto">
+      <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem in, dolores accusantium sed eaque provident eos blanditiis beatae. Odio nihil perspiciatis quia. Praesentium ipsa, dicta explicabo quam molestiae eveniet debitis.</p>
+      <hr class="my-4">
+      <div class="d-flex row justify-content-md-center mb-5">
+        <div class="col-md mb-3 mb-md-0">
+          <a class="masthead-cta btn" href="#" role="button">Lorem Ipsum</a>
+        </div>
+        <div class="col-md">
+          <a class="masthead-cta btn mr-4" href="#" role="button">Lorem Ipsum</a>
+        </div>
+      </div>
+      <div class="d-flex socials justify-content-center justify-content-md-end">
+        <span class="media rounded-circle">
+        </span>
+        <span class="media rounded-circle">
+        </span>
+        <span class="media rounded-circle">
+        </span>
+      </div>
+    </div>
+</div>
+  
+  <!-- Intro -->
+  <div class="container-fluid intro">
+    <div class="row">
+      <div class="col-md-4 photo-container">
+        <span class="photo rounded-circle"></span>
+      </div>
+      <div class="col-md-7 intro"> 
+        <h1 class="display-6">Repostería casera desde el 1998</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+      </div>
+    </div>
   </div>
+
+
+
+  <!-- Catalog -->
+
 </template>
 
 <script>
@@ -41,6 +55,60 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+@media screen and (max-width: 767px) {
+  .photo-container {
+    border-bottom: 3px solid lightgray;
+  }
+}
+
+
+.masthead {
+  background-color: #4F4A4A;
+}
+
+.media {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background-color:coral;
+  margin-left: 1rem;
+}
+
+.photo {
+  display: block;
+  width: 15em;
+  height: 15em;
+  background-color: aqua;
+}
+
+.photo-container {
+  border-right: 3px solid lightgray;
+}
+
+.intro>* {
+  text-align: left;
+}
+
+.logo {
+  display: block;
+  width: 15rem;
+  height: 15rem;
+  background-color: #4E4E4E;
+}
+
+.masthead-cta {
+  width: 15rem;
+  border-radius: 5rem;
+  padding: 1rem;
+  background-color: #C4C4C4;
+  color: black;
+  font-weight: 500;
+} 
+
+.media {
+  background-color: #4E4E4E;
+}
+
 h3 {
   margin: 40px 0 0;
 }
