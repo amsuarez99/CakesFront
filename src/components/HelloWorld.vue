@@ -27,16 +27,16 @@
   
 
 <!-- Intro -->
-<div class="container-fluid intro my-4">
+<div class="container-fluid my-4">
   <div class="row">
     <div class="col-md-4 photo-container">
       <span class="photo rounded-circle mx-auto mb-4"></span>
     </div>
     <div class="col-md-8 d-flex"> 
       <div class="d-flex flex-row align-items-center">
-        <div class="p-5">  
-          <h2 class="display-6 d-block">Soy Cecilia Ponce</h2>
-          <p class="d-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+        <div class="p-5 intro-text">  
+          <h2 class="display-6">Soy Cecilia Ponce</h2>
+          <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
         </div>
       </div>
     </div>
@@ -44,25 +44,50 @@
 </div>
 
 <!-- Reel -->
-<div class="container-fluid reel my-4">
+<div class="container-fluid reel">
   <div class="row">
     <div class="col-md-6 d-flex"> 
       <div class="d-flex flex-row align-items-center">
-        <div class="p-5">  
+        <div class="p-5 reel-text">  
           <h2 class="display-6 d-block">Un poco de mi cocina</h2>
           <h2 class="display-7 d-block">Horneado Casero</h2>
           <p class="d-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus sed fuga delectus dolores laudantium magni laborum doloremque dolore, ab explicabo sint exercitationem iure molestias dignissimos, dolorem quidem eius ad consequatur.</p>
         </div>
       </div>
     </div>
-    <div class="col-md-2 d-md-flex align-items-center"><span class="reel-img w-100 h-25 d-block"></span></div>
-    <div class="col-md-2 d-md-flex align-items-center"><span class="reel-img w-100 h-25 d-block"></span></div>
-    <div class="col-md-2 d-md-flex align-items-center"><span class="reel-img w-100 h-25 d-block"></span></div>
+    <div class="col-md-2 d-md-flex align-items-center"><span class="d-block reel-img mx-auto my-3"></span></div>
+    <div class="col-md-2 d-md-flex align-items-center"><span class="d-block reel-img mx-auto my-3"></span></div>
+    <div class="col-md-2 d-md-flex align-items-center"><span class="d-block reel-img mx-auto my-3"></span></div>
   </div>
 </div>
 
-  <!-- Catalog -->
-
+<!-- Catalog -->
+<div class="container-fluid catalog">
+  <div class="row my-5 my-md-0">
+    <span class="col-md-6 d-block box-img"></span>
+    <div class="col-md-6"> 
+      <div class="d-md-flex align-items-center">
+        <div class="sales p-5">
+          <h2 class="display-7">Cajas de Desayuno</h2>
+          <p class="text-md-justify p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae reprehenderit consequuntur, maxime praesentium laboriosam, doloribus sunt magni illo officia tempora voluptas. Perferendis, voluptatibus! In necessitatibus adipisci consequatur unde libero?</p>
+          <a class="masthead-cta btn mr-4" href="#" role="button">Lorem Ipsum</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-5 my-md-0">
+    <div class="col-md-6"> 
+      <div class="d-md-flex align-items-center">
+        <div class="sales p-5">
+          <h2 class="display-7 text-center">Cajas de Desayuno</h2>
+          <p class="text-md-justify p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae reprehenderit consequuntur, maxime praesentium laboriosam, doloribus sunt magni illo officia tempora voluptas. Perferendis, voluptatibus! In necessitatibus adipisci consequatur unde libero?</p>
+          <a class="masthead-cta btn mr-4" href="#" role="button">Lorem Ipsum</a>
+        </div>
+      </div>
+    </div>
+    <span class="col-md-6 d-block box-img"></span>
+  </div>
+</div>
 </template>
 
 <script>
@@ -76,12 +101,18 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@media screen and (max-width: 767px) {
-  .photo-container {
-    border-bottom: 3px solid lightgray;
-  }
+p {
+  line-height: 2rem;
 }
 
+.box-img {
+  min-height: 8rem;
+}
+
+.reel-img {
+  width: 8rem;
+  height: 8rem;
+}
 
 .masthead {
   background-color: #4F4A4A;
@@ -106,8 +137,7 @@ export default {
   border-right: 3px solid lightgray;
 }
 
-.intro>* {
-  margin-left: 1rem;
+.intro-text > * {
   text-align: left;
 }
 
@@ -157,5 +187,32 @@ li {
 }
 a {
   color: #42b983;
+}
+
+@media screen and (max-width: 767px) {
+  .photo-container {
+    border-bottom: 3px solid lightgray;
+  }
+  .intro-text > p, .intro-text > h2 {
+    text-align: center;
+  }
+  .intro-text > p, .intro-text > h2 {
+    text-align: center;
+  }
+  .reel-text > p, .reel-text > h2 {
+    text-align: center;
+  }
+  .reel-text > p, .reel-text > h2 {
+    text-align: center;
+  }
+
+  .reel-img {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
+.box-img {
+  background-color:#4E4E4E; 
 }
 </style>

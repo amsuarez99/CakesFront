@@ -18,6 +18,7 @@
 
 #nav {
   padding: 30px;
+  background-color: #D6D6D6;
 }
 
 #nav a {
@@ -28,4 +29,30 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.text-md-left {
+  text-align: left;
+}
+
+.text-md-center {
+  text-align: center;
+}
+
+.text-md-justify {
+  text-align: justify;
+}
+
+@media screen and (max-width: 767px) {
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-justify {
+    text-align: justify;
+  }
+} 
 </style>
