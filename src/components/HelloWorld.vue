@@ -8,10 +8,10 @@
       <hr class="my-4">
       <div class="d-flex row justify-content-md-center mb-5">
         <div class="col-md mb-3 mb-md-0">
-          <a class="masthead-cta btn" href="#" role="button">Lorem Ipsum</a>
+          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
         </div>
         <div class="col-md">
-          <a class="masthead-cta btn mr-4" href="#" role="button">Lorem Ipsum</a>
+          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
         </div>
       </div>
       <div class="d-flex socials justify-content-center justify-content-md-end">
@@ -70,7 +70,7 @@
         <div class="sales p-5">
           <h2 class="display-7">Cajas de Desayuno</h2>
           <p class="text-md-justify p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae reprehenderit consequuntur, maxime praesentium laboriosam, doloribus sunt magni illo officia tempora voluptas. Perferendis, voluptatibus! In necessitatibus adipisci consequatur unde libero?</p>
-          <a class="masthead-cta btn mr-4" href="#" role="button">Lorem Ipsum</a>
+          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
         </div>
       </div>
     </div>
@@ -81,7 +81,7 @@
         <div class="sales p-5">
           <h2 class="display-7 text-center">Cajas de Desayuno</h2>
           <p class="text-md-justify p-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae reprehenderit consequuntur, maxime praesentium laboriosam, doloribus sunt magni illo officia tempora voluptas. Perferendis, voluptatibus! In necessitatibus adipisci consequatur unde libero?</p>
-          <a class="masthead-cta btn mr-4" href="#" role="button">Lorem Ipsum</a>
+          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
         </div>
       </div>
     </div>
@@ -91,10 +91,14 @@
 </template>
 
 <script>
+import ButtonComponent from "@/components/Button";
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  components: {
+    ButtonComponent
   }
 }
 </script>
@@ -172,21 +176,6 @@ p {
 
 .media {
   background-color: #4E4E4E;
-}
-
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 
 @media screen and (max-width: 767px) {

@@ -1,5 +1,5 @@
 <template>
-  <div id="nav">
+  <div id="nav" class="drop-shadow p-2">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/catalogo">Catálogo</router-link>
@@ -8,6 +8,11 @@
 </template>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,6 +24,11 @@
 #nav {
   padding: 30px;
   background-color: #D6D6D6;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 900;
+  overflow: hidden;
 }
 
 #nav a {
@@ -55,4 +65,8 @@
     text-align: justify;
   }
 } 
+
+.drop-shadow {
+  filter: drop-shadow(0px 3px 4px rgb(0,0,0,0.8));
+}
 </style>
