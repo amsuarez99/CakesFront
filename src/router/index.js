@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue';
 import About from '../views/About.vue';
-import Catalogo from '../views/Catalogo.vue';
+import BoxCatalog from '../views/BoxCatalog.vue';
 
 const routes = [
     {
@@ -10,9 +10,9 @@ const routes = [
         component: Home
     },
     {
-        path: '/catalogo',
-        name: 'Catalogo',
-        component: Catalogo
+        path: '/desayunos',
+        name: 'BoxCatalog',
+        component: BoxCatalog
     },
     {
         path: '/about',
@@ -21,7 +21,7 @@ const routes = [
         // this generates a separate chunk (about.[hash].js) for this route
         // which is lazy-loaded when the route is visited.
         component: About
-    }
+    },
 ]
 
 const router = createRouter({

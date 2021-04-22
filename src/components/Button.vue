@@ -1,5 +1,5 @@
 <template>
-  <a class="btn mr-4 drop-shadow secondary-pink" v-bind:href="href" role="button">{{text}}</a>
+  <a class="btn mr-4 drop-shadow bg-brown" v-bind:href="href" role="button">{{text}}</a>
 </template>
 
 <script>

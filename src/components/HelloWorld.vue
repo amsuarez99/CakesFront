@@ -1,5 +1,5 @@
 <template>
-<div class="masthead container-fluid primary-pink py-5 mb-4">
+<div class="masthead container-fluid py-5 mb-3">
   <!-- Masthead -->
     <span class="logo mx-auto rounded-circle mb-4"></span>
     <h1>Repostería casera desde el 1998</h1>
@@ -28,13 +28,12 @@
     </div>
 </div>
 
-
 <!-- Intro -->
-<div class="container-fluid my-4">
+<div class="container-fluid py-5 mb-3 secondary-pink">
   <div class="row">
     <div class="col-md-4 photo-container">
       <!-- photo -->
-      <span class="photo bg-gold rounded-circle mx-auto mb-4"></span>
+      <span class="photo rounded-circle mx-auto mb-4"></span>
     </div>
     <div class="col-md-8 d-flex">
       <div class="d-flex flex-row align-items-center">
@@ -47,8 +46,36 @@
   </div>
 </div>
 
+<!-- Catalog -->
+<div class="container catalog py-5 mb-3">
+  <div class="row my-5 my-md-0">
+    <span class="col-md-6 d-block box-img"></span>
+    <div class="col-md-6">
+      <div class="d-md-flex align-items-center">
+        <div class="py-4">
+          <h2 class="my-3">Catálogo <b>Pasteles</b></h2>
+          <p class="text-md-justify p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae reprehenderit consequuntur, maxime praesentium laboriosam, doloribus sunt magni illo officia tempora voluptas. Perferendis, voluptatibus! In necessitatibus adipisci consequatur unde libero?</p>
+          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-5 my-md-0">
+    <div class="col-md-6">
+      <div class="d-md-flex align-items-center">
+        <div class="py-4">
+          <h2 class="my-3">Catálogo <b>Cajas de Desayuno</b></h2>
+          <p class="text-md-justify p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae reprehenderit consequuntur, maxime praesentium laboriosam, doloribus sunt magni illo officia tempora voluptas. Perferendis, voluptatibus! In necessitatibus adipisci consequatur unde libero?</p>
+          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
+        </div>
+      </div>
+    </div>
+    <span class="col-md-6 d-block box-img"></span>
+  </div>
+</div>
+
 <!-- Reel -->
-<div class="container-fluid reel primary-pink">
+<div class="container-fluid reel secondary-pink py-5">
   <div class="row">
     <div class="col-md-6 d-flex">
       <div class="d-flex flex-row align-items-center">
@@ -62,34 +89,6 @@
     <div class="col-md-2 d-md-flex align-items-center"><span class="d-block reel-img mx-auto my-3"></span></div>
     <div class="col-md-2 d-md-flex align-items-center"><span class="d-block reel-img mx-auto my-3"></span></div>
     <div class="col-md-2 d-md-flex align-items-center"><span class="d-block reel-img mx-auto my-3"></span></div>
-  </div>
-</div>
-
-<!-- Catalog -->
-<div class="container catalog">
-  <div class="row my-5 my-md-0">
-    <span class="col-md-6 d-block box-img"></span>
-    <div class="col-md-6">
-      <div class="d-md-flex align-items-center">
-        <div class="py-4">
-          <h2 class="my-3">Cajas de Desayuno</h2>
-          <p class="text-md-justify p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae reprehenderit consequuntur, maxime praesentium laboriosam, doloribus sunt magni illo officia tempora voluptas. Perferendis, voluptatibus! In necessitatibus adipisci consequatur unde libero?</p>
-          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row my-5 my-md-0">
-    <div class="col-md-6">
-      <div class="d-md-flex align-items-center">
-        <div class="py-4">
-          <h2 class="my-3">Cajas de Desayuno</h2>
-          <p class="text-md-justify p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae reprehenderit consequuntur, maxime praesentium laboriosam, doloribus sunt magni illo officia tempora voluptas. Perferendis, voluptatibus! In necessitatibus adipisci consequatur unde libero?</p>
-          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
-        </div>
-      </div>
-    </div>
-    <span class="col-md-6 d-block box-img"></span>
   </div>
 </div>
 </template>
@@ -162,6 +161,7 @@ p {
   display: block;
   width: 15em;
   height: 15em;
+  background-color: #4E4E4E;
 }
 
 .photo-container {
@@ -183,9 +183,9 @@ p {
 
 .logo {
   display: block;
+  background-color:#4E4E4E;
   width: 15rem;
   height: 15rem;
-  background-color: lightcoral;
 }
 
 @media screen and (max-width: 767px) {

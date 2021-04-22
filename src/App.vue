@@ -1,8 +1,9 @@
 <template>
-  <div id="nav" class="drop-shadow p-2 secondary-pink">
+  <div id="nav" class="drop-shadow py-3 secondary-pink">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/catalogo">Catálogo</router-link>
+    <router-link to="/desayunos">Desayunos</router-link> |
+    <router-link to="/pasteles">Pasteles</router-link>
   </div>
   <router-view class="pt-4"/>
 </template>
@@ -81,8 +82,8 @@
   }
 } 
 
-
 .drop-shadow {
   filter: drop-shadow(0px 3px 4px rgb(0,0,0,0.3));
 }
+
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="circle"></div>
+  <div class="circle secondary-pink"></div>
   <div class="masthead container-fluid pt-5 my-4">
     <!-- Masthead -->
       <div class="mx-auto w-75">
@@ -10,10 +10,10 @@
         <span class="logo drop-shadow mx-auto rounded-circle mb-5"></span>
         <div class="d-flex row justify-content-md-center mb-5">
           <div class="col-md mb-3 mb-md-0">
-            <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
+            <ButtonComponent href="#" text="Arma tu desayuno"></ButtonComponent>
           </div>
           <div class="col-md">
-            <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
+            <ButtonComponent href="#" text="Los más vendidos"></ButtonComponent>
           </div>
         </div>
       </div>
@@ -23,10 +23,19 @@
 <script>
 import ButtonComponent from '@/components/Button';
 export default {
-  name: 'Catalog',
+  name: 'BoxCatalog',
   components: {
     ButtonComponent
+  },
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+
   }
+
 }
 </script>
 
@@ -38,7 +47,6 @@ export default {
   left: 0;
   width: 100%;
   height: 150%;
-  background-color: #A8A8A8;
   clip-path: circle(60% at top);
 }
 
