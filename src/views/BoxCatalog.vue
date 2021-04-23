@@ -19,7 +19,17 @@
       </div>
   </div>
 
-  <div class="salados d-flex flex-wrap justify-content-around">
+  <!-- Products -->
+  <h2 class="mb-4">Platillo Salado</h2>
+  <div class="my-5 d-flex flex-wrap justify-content-around">
+    <CardComponent v-for="(product, index) in products" :product="product" :key="index"></CardComponent>
+  </div>
+  <h2 class="mb-4">Platillo Dulce</h2>
+  <div class="my-5 d-flex flex-wrap justify-content-around">
+    <CardComponent v-for="(product, index) in products" :product="product" :key="index"></CardComponent>
+  </div>
+  <h2 class="mb-4">Productos Misceláneos</h2>
+  <div class="my-5 d-flex flex-wrap justify-content-around">
     <CardComponent v-for="(product, index) in products" :product="product" :key="index"></CardComponent>
   </div>
 </template>
@@ -28,7 +38,7 @@
 import ButtonComponent from '@/components/Button';
 import CardComponent from '@/components/Card'
 export default {
-  name: 'Catalog',
+  name: 'BoxCatalog',
   components: {
     ButtonComponent,
     CardComponent
@@ -51,6 +61,21 @@ export default {
           description: 'lorem ips ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumum',
           price: 499
         },
+        // {
+        //   name: 'Product 4',
+        //   description: 'lorem ips ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumum',
+        //   price: 499
+        // },
+        // {
+        //   name: 'Product 5',
+        //   description: 'lorem ips ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumum',
+        //   price: 499
+        // },
+        // {
+        //   name: 'Product 6',
+        //   description: 'lorem ips ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumum',
+        //   price: 499
+        // },
       ]
     }
   }
@@ -64,7 +89,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 150%;
+  height: 100%;
   clip-path: circle(60% at top);
 }
 

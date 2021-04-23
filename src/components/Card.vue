@@ -1,10 +1,10 @@
 <template>
-  <div class="card-employee">
+  <div class="card-employee d-flex flex-column">
     <span></span>
     <div class="content d-flex flex-column">
       <p>{{product.name}}</p>
       <p>{{product.description}}</p>
-      <p class="py-2">${{product.price}}</p>
+      <p class="mb-0">${{product.price}}</p>
     </div>
   </div>
 </template>
@@ -49,6 +49,7 @@ export default {
   .content {
       font-size: 0.8em;
       padding: 1.3rem 1rem;
+      flex: auto;
   }
 
   .content p {
@@ -67,7 +68,7 @@ export default {
 
   .content p:last-child {
     margin-top: auto;
-    background-color: white;
+    font-weight: 450;
   }
 
 </style>
