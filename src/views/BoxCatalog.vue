@@ -18,24 +18,42 @@
         </div>
       </div>
   </div>
+
+  <div class="salados d-flex flex-wrap justify-content-around">
+    <CardComponent v-for="(product, index) in products" :product="product" :key="index"></CardComponent>
+  </div>
 </template>
 
 <script>
 import ButtonComponent from '@/components/Button';
+import CardComponent from '@/components/Card'
 export default {
-  name: 'BoxCatalog',
+  name: 'Catalog',
   components: {
-    ButtonComponent
+    ButtonComponent,
+    CardComponent
   },
   data() {
     return {
-
+      products: [ 
+        {
+          name: 'Product 1',
+          description: 'lorem ip ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumsum',
+          price: 499
+        },
+        {
+          name: 'Product 2',
+          description: 'lorem ipsu ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumm',
+          price: 499
+        },
+        {
+          name: 'Product 3',
+          description: 'lorem ips ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumum',
+          price: 499
+        },
+      ]
     }
-  },
-  methods: {
-
   }
-
 }
 </script>
 

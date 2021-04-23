@@ -19,7 +19,6 @@
       </div>
   </div>
 
-  <CardComponent v-for="(product, index) in products" :product="product" :key="index"></CardComponent>
 </template>
 
 <script>
