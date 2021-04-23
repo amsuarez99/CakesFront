@@ -96,7 +96,6 @@
 
 <script>
 import ButtonComponent from "@/components/Button";
-import CardComponent from "@/components/Card";
 
 export default {
   name: 'HelloWorld',
@@ -105,7 +104,6 @@ export default {
   },
   components: {
     ButtonComponent,
-    CardComponent
   },
   methods: {
   },
