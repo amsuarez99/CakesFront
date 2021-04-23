@@ -18,14 +18,39 @@
         </div>
       </div>
   </div>
+
+  <CardComponent v-for="(product, index) in products" :key"index" :product="product"></CardComponent>
 </template>
 
 <script>
 import ButtonComponent from '@/components/Button';
+import CardComponent from '@/components/Card'
 export default {
   name: 'Catalog',
   components: {
-    ButtonComponent
+    ButtonComponent,
+    CardComponent
+  },
+  data() {
+    return {
+      products: [ 
+        {
+          name: 'product1',
+          description: 'lorem ipsum',
+          price: 499
+        },
+        {
+          name: 'product2',
+          description: 'lorem ipsum',
+          price: 499
+        },
+        {
+          name: 'product2',
+          description: 'lorem ipsum',
+          price: 499
+        },
+      ]
+    }
   }
 }
 </script>
