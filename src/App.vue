@@ -1,10 +1,29 @@
 <template>
-  <div id="nav" class="drop-shadow secondary-pink p-2">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/desayunos">Desayunos</router-link> |
-    <router-link to="/pasteles">Pasteles</router-link>
-  </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/">Home</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/about">About</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/desayunos">Desayunos</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/pasteles">Pasteles</router-link>
+          </li>
+        </ul>
+        <form  class="form-inline my-2 my-lg-0">
+          <a class="btn btn-outline-success my-2 my-sm-0" onclick="window.$('#miniCart').modal('show');">Cart</a>
+        </form>
+      </div>
+    </nav>
   <router-view class="pt-5"/>
 </template>
 
@@ -12,6 +31,15 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+.media{
+  flex-flow: row;
+  display: flex;
+}
+.align-self-center{
+  flex: 1;
+  margin: 1rem;
 }
 
 #app {
@@ -54,7 +82,7 @@
   text-align: justify;
 }
 .primary-pink {
-  background-color:hsla(341,78%,87%, 1); 
+  background-color:hsla(341,78%,87%, 1);
 }
 
 .secondary-pink {
@@ -81,7 +109,7 @@
   .text-justify {
     text-align: justify;
   }
-} 
+}
 
 .drop-shadow {
   filter: drop-shadow(0px 3px 4px rgb(0,0,0,0.3));

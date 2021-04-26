@@ -14,79 +14,42 @@
   <div class="my-5 d-flex flex-wrap justify-content-around">
     <CardComponent v-for="(product, index) in products" :product="product" :key="index"></CardComponent>
   </div>
+
+  <!-- Modal -->
+  <MiniCart/>
 </template>
 
 <script>
+import Constants from '../helpers/delivery-methods'
 import CardComponent from '@/components/Card'
+import MiniCart from '@/components/MiniCart'
 export default {
   name: 'CakeCatalog',
   components: {
-    CardComponent
+    CardComponent,
+    MiniCart
+  },
+  mounted() {
+    this.fetchPasteles()
+  },
+  methods:{
+    async fetchPasteles(){
+      await this.$http.get(Constants.API + "pastel").then((response) => {
+        this.products = response.data.map((p) => {
+          p.product.fotos = p.product.fotos.map((f) => {
+            return f.foto
+          })
+          return p.product
+        })
+      }).catch((error) => {
+        console.log(error)
+        this.products = []
+      })
+    }
   },
   data() {
     return {
-      products: [ 
-        {
-          name: 'product1',
-          description: 'lorem ipsum',
-          price: 499
-        },
-        {
-          name: 'product2',
-          description: 'lorem ipsum',
-          price: 499
-        },
-        {
-          name: 'product2',
-          description: 'lorem ipsum',
-          price: 499
-        },
-        {
-          name: 'product3',
-          description: 'lorem ipsum',
-          price: 499
-        },
-        {
-          name: 'product4',
-          description: 'lorem ipsum',
-          price: 499
-        },
-        {
-          name: 'product5',
-          description: 'lorem ipsum',
-          price: 499
-        },
-        {
-          name: 'product6',
-          description: 'lorem ipsum',
-          price: 499
-        },
-        {
-          name: 'product7',
-          description: 'lorem ipsum',
-          price: 499
-        },
-        {
-          name: 'product8',
-          description: 'lorem ipsum',
-          price: 499
-        },
-        {
-          name: 'product9',
-          description: 'lorem ipsum',
-          price: 499
-        },
-        {
-          name: 'product10',
-          description: 'lorem ipsum',
-          price: 499
-        },
-        {
-          name: 'product11',
-          description: 'lorem ipsum',
-          price: 499
-        },
-      ]
+      products: []
     }
   }
 }

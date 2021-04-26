@@ -1,13 +1,20 @@
 <template>
-$END$
+
 </template>
 
 <script>
 export default {
-name: "StripeCheckout"
-}
+  name: "StripeCheckout",
+  components: {
+    StripeCheckout,
+  },
+  data () {
+    return {
+
+    };
+  },
+  methods: {
+
+  },
+};
 </script>
-
-<style scoped>
-
-</style>

@@ -1,20 +1,38 @@
 <template>
   <div class="card-employee d-flex flex-column">
-    <span></span>
+    <carousel :perPage="1" class="story-carousel">
+      <slide v-for="(image,index) in product.fotos" :key="{index}" style="height: 200px;">
+        <img :src="image" class="card-img-top" alt="..." >
+      </slide>
+    </carousel>
+
     <div class="content d-flex flex-column">
       <p>{{product.name}}</p>
       <p>{{product.description}}</p>
       <p class="mb-0">${{product.price}}</p>
     </div>
+    <AddToCart
+        :image="getImage(product.fotos)"
+        :name="product.name"
+        :price="product.price.toString()"
+        :productId="product.id"
+    />
   </div>
 </template>
 
 <script>
+import AddToCart from "@/components/AddToCart";
 export default {
   name: 'CardComponent',
+  components:{AddToCart},
   props: {
     product: Object
   },
+  methods:{
+    getImage(images){
+      return images[0]
+    }
+  }
 }
 </script>
 
@@ -70,5 +88,10 @@ export default {
     margin-top: auto;
     font-weight: 450;
   }
+
+  .story-carousel {
+    height: 200px;
+  }
+
 
 </style>
