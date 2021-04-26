@@ -62,7 +62,7 @@
 </template>
 <script>
 var stripe = window.Stripe('pk_test_51IkDS2A1JkC9eFwK4k3AAssy29KSprhfWNxx8vOW0lBfFe6svjt8ktaqkFYEAcFn6WzGSeDw27pci0iV5XqIEU7i00LQKemw9i');
-
+import Constants from '../helpers/delivery-methods'
 export default {
   name: 'Home',
   data(){
@@ -80,10 +80,13 @@ export default {
     pay(){
       // data = {id:10, id:3}
       console.log(this.$store.state.cart)
+      let test = true
+      let local =  test ? "http://localhost:8080/api/" : Constants.API
       let data = this.$store.state.cart.map((item) => ({[item.id] : item.productQuantity}));
       data = Object.assign({}, ...data)
       console.log(data);
-      this.$http.post("http://localhost:8080/api/orders/checkoutSession", {products: data, shippingAddress: this.address, specification: "s", clientName: this.name, clientPhone: this.phone, clientEmail: this.email}).then(response => {
+
+      this.$http.post(local + "orders/checkoutSession", {products: data, shippingAddress: this.address, specification: "s", clientName: this.name, clientPhone: this.phone, clientEmail: this.email}).then(response => {
         console.log(response.data);
         this.sessionId = response.data
         stripe.redirectToCheckout({
