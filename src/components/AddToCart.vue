@@ -1,7 +1,5 @@
 <template>
-  <div class="add-to-cart">
-    <button id="cartButton" class="btn btn-primary" @click="addToCart">Add to cart</button>
-  </div>
+  <a class="btn mr-4 drop-shadow" role="button">Añadir al carrito</a>
 </template>
 
 <script>
@@ -37,8 +35,19 @@ export default {
 </script>
 
 <style scoped>
-#cartButton{
-  align-self: flex-end;
-  width: 40%;
+a {
+  width: 15rem;
+  border-radius: 5rem;
+  padding: 1rem;
+  color: black;
+  font-weight: 500;
+  border-color: hsla(28,54%,29%, 1) !important;
+  margin: 1em auto;
+  transition: 0.3s;
+} 
+
+a:hover {
+  background-color:  hsla(28,54%,29%, 1) !important;
+  color: white;
 }
 </style>

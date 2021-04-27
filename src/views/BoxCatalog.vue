@@ -61,21 +61,6 @@ export default {
           description: 'lorem ips ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumum',
           price: 499
         },
-        // {
-        //   name: 'Product 4',
-        //   description: 'lorem ips ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumum',
-        //   price: 499
-        // },
-        // {
-        //   name: 'Product 5',
-        //   description: 'lorem ips ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumum',
-        //   price: 499
-        // },
-        // {
-        //   name: 'Product 6',
-        //   description: 'lorem ips ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumum',
-        //   price: 499
-        // },
       ]
     }
   }

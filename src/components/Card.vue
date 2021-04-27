@@ -1,8 +1,8 @@
 <template>
   <div class="card-employee d-flex flex-column">
-    <carousel :perPage="1" class="story-carousel">
-      <slide v-for="(image,index) in product.fotos" :key="{index}" style="height: 200px;">
-        <img :src="image" class="card-img-top" alt="..." >
+    <carousel :perPage="1" class="story-carousel vs-carousel__wrapper" :hideArrowsOnBound="true">
+      <slide v-for="(image,index) in product.fotos" :key="{index}" style="height: 200px;" class="card-img-top vs-carousel__wrapper">
+        <img :src="image" class="card-img-top" :alt="product.name" >
       </slide>
     </carousel>
 
@@ -37,15 +37,6 @@ export default {
 </script>
 
 <style scoped>
-  .card-employee span {
-      border-top-right-radius: 1rem;
-      border-top-left-radius: 1rem;
-      display: block;
-      width: 100%;
-      height: 10em;
-      background: white;
-  }
-
   .card-employee {
       position: relative;
       width: 30%;
@@ -89,9 +80,15 @@ export default {
     font-weight: 450;
   }
 
-  .story-carousel {
-    height: 200px;
+
+  .vs-carousel__wrapper {
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
   }
 
-
+  .story-carousel {
+    height: 200px;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+  }
 </style>
