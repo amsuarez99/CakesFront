@@ -80,6 +80,9 @@ export default {
     font-weight: 450;
   }
 
+  button {
+    background-color: red;
+  }
 
   .vs-carousel__wrapper {
     border-top-right-radius: inherit;

@@ -1,6 +1,5 @@
 <template>
   <div class="checkout">
-    <h1>This is an checkout page</h1>
     <div class="payForm">
       <div class="jumbotron">
         <br>
@@ -80,7 +79,7 @@ export default {
     pay(){
       // data = {id:10, id:3}
       console.log(this.$store.state.cart)
-      let test = true
+      let test = false
       let local =  test ? "http://localhost:8080/api/" : Constants.API
       let data = this.$store.state.cart.map((item) => ({[item.id] : item.productQuantity}));
       data = Object.assign({}, ...data)

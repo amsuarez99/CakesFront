@@ -2,11 +2,11 @@
 <div class="mini-cart">
   <div class="modal fade" id="miniCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-      <div class="modal-content">
+      <div class="modal-content primary-pink">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">My Bag</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+          <h5 class="modal-title" id="exampleModalLabel">MI CARRITO</h5>
+          <button type="button" @click="hideModal" class="close" data-dismiss="modal" aria-label="Close">
+            <font-awesome-icon class="close-icon" :icon="['fas', 'times-circle']" />
           </button>
         </div>
         <div class="modal-body">
@@ -23,15 +23,15 @@
                   ${{item.productPrice}} mxn
                 </p>
                 <p class="mt-0">
-                  Quantity: {{item.productQuantity}}
+                  Cantidad: {{item.productQuantity}}
                 </p>
               </div>
             </li>
           </ul>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick=" window.$('#miniCart').modal('toggle');">Continue shopping</button>
-          <button type="button" class="btn btn-primary" @click="checkout">Checkout</button>
+        <div class="modal-footer d-flex">
+          <button type="button" class="button" data-dismiss="modal" onclick=" window.$('#miniCart').modal('toggle');">Continuar comprando</button>
+          <button type="button" class="button secondary-pink" @click="checkout">Terminar Compra</button>
         </div>
       </div>
     </div>
@@ -43,20 +43,61 @@
 <script>
 export default {
 name: "MiniCart",
-  methods: {
+methods: {
   checkout(){
-    window.$('#miniCart').modal('hide');
+    this.hideModal()
     this.$router.push('/checkout');
   },
-    removeItem(){
+  hideModal() {
+    window.$('#miniCart').modal('hide');
+  },
+  removeItem(){
 
-    }
   }
+},
 }
 </script>
 
 <style scoped>
 .media-body{
   width: 65%;
+}
+
+.close {
+  font-weight: bolder;
+  font-size: 1.5rem;
+  border: none;
+  background-color: inherit;
+  color: #292929;
+}
+
+.modal-content {
+  border-radius: 1rem;
+  color: black;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-body {
+  border-top: 2px dashed lightcoral;
+  border-bottom: 2px dashed lightcoral;
+}
+
+.button {
+  font-size: 0.8rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
+  border-width: 0px;
+}
+.cancel {
+  padding: 0.5rem;
+  margin-right: auto;
+}
+
+.continue {
+  padding: 1rem;
+  border-radius: 1rem;
 }
 </style>

@@ -1,0 +1,49 @@
+.align-self-center{
+  flex: 1;
+  margin: 1rem;
+}
+
+.text-md-left {
+  text-align: left;
+}
+
+.text-md-center {
+  text-align: center;
+}
+
+.text-md-justify {
+  text-align: justify;
+}
+.primary-pink {
+  background-color:hsla(341,78%,87%, 1) !important;
+}
+
+.secondary-pink {
+  background-color: hsla(359,38%,71%, 1) !important;
+}
+
+.bg-brown {
+  background-color: hsla(28,54%,29%, 1) !important;
+}
+
+.bg-gold {
+  background-color: hsla(48,100%,49%, 1) !important;
+}
+
+@media screen and (max-width: 767px) {
+  .text-left {
+    text-align: left;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-justify {
+    text-align: justify;
+  }
+}
+
+.drop-shadow {
+  filter: drop-shadow(0px 3px 4px rgb(0,0,0,0.3));
+}

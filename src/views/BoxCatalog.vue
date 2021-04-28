@@ -22,19 +22,20 @@
   <!-- Products -->
   <h2 class="mb-4">Platillo Salado</h2>
   <div class="my-5 d-flex flex-wrap justify-content-around">
-    <CardComponent v-for="(product, index) in products" :product="product" :key="index"></CardComponent>
+    <CardComponent v-for="(salado, index) in products.salados" :product="salado" :key="index"></CardComponent>
   </div>
   <h2 class="mb-4">Platillo Dulce</h2>
   <div class="my-5 d-flex flex-wrap justify-content-around">
-    <CardComponent v-for="(product, index) in products" :product="product" :key="index"></CardComponent>
+    <CardComponent v-for="(pastel, index) in products.pasteles" :product="pastel" :key="index"></CardComponent>
   </div>
   <h2 class="mb-4">Productos Misceláneos</h2>
   <div class="my-5 d-flex flex-wrap justify-content-around">
-    <CardComponent v-for="(product, index) in products" :product="product" :key="index"></CardComponent>
+    <CardComponent v-for="(miscelaneo, index) in products.miscelaneos" :product="miscelaneo" :key="index"></CardComponent>
   </div>
 </template>
 
 <script>
+import Constants from '../helpers/delivery-methods'
 import ButtonComponent from '@/components/Button';
 import CardComponent from '@/components/Card'
 export default {
@@ -43,27 +44,61 @@ export default {
     ButtonComponent,
     CardComponent
   },
+  mounted () {
+    this.$http
+      .get(Constants.API + 'pastel')
+      .then(response => {
+        this.products.pasteles = response.data.map(product => {
+          product.product.fotos = product.product.fotos.map(foto => {
+            return foto.foto
+          })
+          console.log(product.product)
+          return product.product
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    this.$http
+      .get(Constants.API + 'salado')
+      .then(response => {
+        this.products.salados = response.data.map(product => {
+          console.log(product.product)
+          if(!product.product.fotos) {
+            product.product.fotos = []
+          } else {
+            product.product.fotos = product.product.fotos.map(foto => foto.foto)
+          }
+          return product.product
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    this.$http
+      .get(Constants.API + 'miscelaneo')
+      .then(response => {
+        this.products.miscelaneos = response.data.map(product => {
+          product.product.fotos = product.product.fotos.map(foto => {
+            return foto.foto
+          })
+          console.log(product.product)
+          return product.product
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      })
+  },
   data() {
     return {
-      products: [ 
-        {
-          name: 'Product 1',
-          description: 'lorem ip ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumsum',
-          price: 499
-        },
-        {
-          name: 'Product 2',
-          description: 'lorem ipsu ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumm',
-          price: 499
-        },
-        {
-          name: 'Product 3',
-          description: 'lorem ips ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsum ipsumum',
-          price: 499
-        },
-      ]
+      products: {
+        salados: [],
+        pasteles: [],
+        miscelaneos: []
+      }
     }
-  }
+  },
 }
 </script>
 
