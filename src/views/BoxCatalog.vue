@@ -22,30 +22,23 @@
   <!-- Products -->
   <h2 class="mb-4">Platillo Salado</h2>
   <div class="my-5 d-flex flex-wrap justify-content-around">
-    <CardComponent v-for="(salado, index) in products.salados" :product="salado" :key="index"></CardComponent>
+    <BoxCard v-for="(salado, index) in products.salados" :product="salado" :key="index" @click="addToBox(products.salados[index])"/>
   </div>
   <h2 class="mb-4">Platillo Dulce</h2>
   <div class="my-5 d-flex flex-wrap justify-content-around">
-    <CardComponent v-for="(pastel, index) in products.pasteles" :product="pastel" :key="index"></CardComponent>
+    <BoxCard v-for="(pastel, index) in products.pasteles" :product="pastel" :key="index" @click="addToBox(products.pasteles[index])"/>
   </div>
-  <h2 class="mb-4">Productos Misceláneos</h2>
-  <div class="my-5 d-flex flex-wrap justify-content-around">
-    <CardComponent v-for="(miscelaneo, index) in products.miscelaneos" :product="miscelaneo" :key="index"></CardComponent>
-  </div>
-  <MiniCart/>
 </template>
 
 <script>
 import Constants from '../helpers/delivery-methods'
 import ButtonComponent from '@/components/Button';
-import CardComponent from '@/components/Card'
-import MiniCart from '@/components/MiniCart'
+import BoxCard from '@/components/BoxCard'
 export default {
   name: 'BoxCatalog',
   components: {
     ButtonComponent,
-    CardComponent,
-    MiniCart,
+    BoxCard,
   },
   mounted () {
     this.$http
@@ -96,9 +89,22 @@ export default {
         salados: [],
         pasteles: [],
         miscelaneos: []
-      }
+      },
+      productsInBox: []
     }
   },
+  methods: {
+    addToBox(item) {
+      let product = this.productsInBox.find(ids => product.id = item.id);
+      if(product) {
+        this.$delete(this.producsInBox, product)
+      } else {
+        this.productsInBox.push()
+      }
+      console.log(this.productsInBox)
+    },
+    
+  }
 }
 </script>
 

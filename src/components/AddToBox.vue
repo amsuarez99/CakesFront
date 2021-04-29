@@ -1,5 +1,5 @@
 <template>
-  <a class="btn mr-4 drop-shadow" role="button" @click="addToCart">Añadir al carrito</a>
+  <a class="btn mr-4 drop-shadow" role="button" @click="addToCart">Añadir a la caja</a>
 </template>
 
 <script>
