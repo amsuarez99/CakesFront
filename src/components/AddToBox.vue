@@ -5,7 +5,7 @@
 <script>
 import 'bootstrap';
 export default {
-  name: "add-to-cart",
+  name: "add-to-box",
   props: {
     productId: String,
     name: String,

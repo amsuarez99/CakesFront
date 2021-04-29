@@ -32,17 +32,20 @@
   <div class="my-5 d-flex flex-wrap justify-content-around">
     <CardComponent v-for="(miscelaneo, index) in products.miscelaneos" :product="miscelaneo" :key="index"></CardComponent>
   </div>
+  <MiniCart/>
 </template>
 
 <script>
 import Constants from '../helpers/delivery-methods'
 import ButtonComponent from '@/components/Button';
 import CardComponent from '@/components/Card'
+import MiniCart from '@/components/MiniCart'
 export default {
   name: 'BoxCatalog',
   components: {
     ButtonComponent,
-    CardComponent
+    CardComponent,
+    MiniCart,
   },
   mounted () {
     this.$http
@@ -52,7 +55,6 @@ export default {
           product.product.fotos = product.product.fotos.map(foto => {
             return foto.foto
           })
-          console.log(product.product)
           return product.product
         })
       })
@@ -63,7 +65,6 @@ export default {
       .get(Constants.API + 'salado')
       .then(response => {
         this.products.salados = response.data.map(product => {
-          console.log(product.product)
           if(!product.product.fotos) {
             product.product.fotos = []
           } else {
@@ -82,7 +83,6 @@ export default {
           product.product.fotos = product.product.fotos.map(foto => {
             return foto.foto
           })
-          console.log(product.product)
           return product.product
         })
       })

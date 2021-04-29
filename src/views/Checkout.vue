@@ -81,8 +81,8 @@
     </div>
   </div>
   <div class="precio">
-    <h4 class="mb-3">Total Price : {{ $store.getters.totalPrice }}</h4>
-    <h4 class="mb-3">Total price con impuestos: {{ $store.getters.totalPriceWithTax }}</h4>
+    <h4 class="mb-3">Subtotal: ${{ $store.getters.totalPrice }}</h4>
+    <h4 class="mb-3">Total + IVA: ${{ $store.getters.totalPriceWithTax }}</h4>
     <ButtonComponent class="mb-3" text="Checkout" @click="pay"></ButtonComponent>
   </div>
 </template>
