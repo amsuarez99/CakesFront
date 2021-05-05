@@ -95,15 +95,14 @@ export default {
   },
   methods: {
     addToBox(item) {
-      let product = this.productsInBox.find(ids => product.id = item.id);
-      if(product) {
-        this.$delete(this.producsInBox, product)
+      let pid = this.productsInBox.find(id => id == item.id);
+      if(pid) {
+        this.productsInBox.splice(pid, 1);
       } else {
-        this.productsInBox.push()
+        this.productsInBox.push(item.id);
       }
-      console.log(this.productsInBox)
-    },
-    
+      console.log(this.productsInBox);
+    }
   }
 }
 </script>

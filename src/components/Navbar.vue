@@ -10,13 +10,10 @@
           <router-link class="nav-link" to="/">Home</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/about">About</router-link>
+          <router-link class="nav-link" to="/pasteles">Pasteles</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/desayunos">Desayunos</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link class="nav-link" to="/pasteles">Pasteles</router-link>
         </li>
         <li class="carrito">
           <a class="btn" onclick="window.$('#miniCart').modal('show');">Carrito</a>
