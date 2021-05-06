@@ -1,5 +1,5 @@
 <template>
-  <div class="card-employee d-flex flex-column" :class="{selected: isSelected}" @click="handleToggle">
+  <div class="card-employee d-flex flex-column" :class="{selected: isSelected}" @click="toggle">
     <carousel :perPage="1" class="story-carousel vs-carousel__wrapper" :hideArrowsOnBound="true">
       <slide v-for="(image,index) in product.fotos" :key="{index}" style="height: 200px;" class="card-img-top vs-carousel__wrapper">
         <img :src="image" class="card-img-top" :alt="product.name" >
@@ -24,8 +24,9 @@ export default {
     getImage(images){
       return images[0]
     },
-    handleToggle() {
+    toggle() {
       this.isSelected = !this.isSelected;
+      this.$emit("selected", this.product.id, this.product.name);
     }
   },
   data() {
@@ -52,8 +53,13 @@ export default {
       transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
   }
 
-  .card-employee:hover, .selected {
+  .card-employee:hover {
       box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+
+  .selected {
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      border: 0.3rem solid #4a4a4a;
   }
 
   .content {

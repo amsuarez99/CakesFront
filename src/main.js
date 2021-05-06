@@ -9,10 +9,11 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faInstagram, faFacebookF, faWhatsapp,faCheckCircle, faTimesCircle, faShoppingCart)
+library.add(faInstagram, faFacebookF, faWhatsapp,faCheckCircle, faTimesCircle, faShoppingCart, faTimes);
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'

@@ -22,23 +22,28 @@
   <!-- Products -->
   <h2 class="mb-4">Platillo Salado</h2>
   <div class="my-5 d-flex flex-wrap justify-content-around">
-    <BoxCard v-for="(salado, index) in products.salados" :product="salado" :key="index" @click="addToBox(products.salados[index])"/>
+    <BoxCard v-for="(salado, index) in products.salados" :product="salado" :key="index" @selected="addToBox"/>
   </div>
   <h2 class="mb-4">Platillo Dulce</h2>
   <div class="my-5 d-flex flex-wrap justify-content-around">
-    <BoxCard v-for="(pastel, index) in products.pasteles" :product="pastel" :key="index" @click="addToBox(products.pasteles[index])"/>
+    <BoxCard v-for="(pastel, index) in products.pasteles" :product="pastel" :key="index" @selected="addToBox"/>
   </div>
+
+  <NotificationCenter class="notifications" :messages="messages" @deleteNotification="deleteMessage"/>
 </template>
 
 <script>
 import Constants from '../helpers/delivery-methods'
 import ButtonComponent from '@/components/Button';
 import BoxCard from '@/components/BoxCard'
+import NotificationCenter from '@/components/NotificationCenter';
+
 export default {
   name: 'BoxCatalog',
   components: {
     ButtonComponent,
     BoxCard,
+    NotificationCenter
   },
   mounted () {
     this.$http
@@ -90,20 +95,34 @@ export default {
         pasteles: [],
         miscelaneos: []
       },
-      productsInBox: []
+      productsInBox: [],
+      messages: [],
     }
   },
   methods: {
-    addToBox(item) {
-      let pid = this.productsInBox.find(id => id == item.id);
-      if(pid) {
-        this.productsInBox.splice(pid, 1);
+    addToBox(id, pName) {
+      let product = this.productsInBox.find(pid => pid == id);
+      if(product) {
+        this.productsInBox.splice(product, 1);
       } else {
-        this.productsInBox.push(item.id);
+        this.productsInBox.push(id);
+        this.notify(pName);
       }
       console.log(this.productsInBox);
+    },
+    notify(pName) {
+      // Add message to messages
+      let message = "Se agregó " + pName + " a la caja!";
+      this.messages.push(message);
+    },
+    deleteMessage(message) {
+      let found = this.messages.find(m => m == message);
+      if(found) {
+        this.messages.splice(found, 1);
+      }
     }
   }
+
 }
 </script>
 
@@ -133,5 +152,11 @@ b {
   p {
     font-size: 0.8rem;
   }
+}
+
+.notifications {
+  position: sticky;
+  bottom: 0;
+  z-index: 1000;
 }
 </style>
