@@ -1,11 +1,11 @@
 <template>
-<div class="mini-cart">
+<div class="box-details">
   <div class="modal fade" id="miniCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content primary-pink">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">MI CARRITO</h5>
-          <button type="button" @click="hideModal" class="close" data-dismiss="modal" aria-label="Close">
+          <h5 class="modal-title">Caja Personalizada</h5>
+          <button type="button" @click="closeModal" class="close" data-dismiss="modal" aria-label="Close">
             <font-awesome-icon class="close-icon" :icon="['fas', 'times-circle']" />
           </button>
         </div>
@@ -30,7 +30,6 @@
           </ul>
         </div>
         <div class="modal-footer d-flex">
-          <button type="button" class="button" data-dismiss="modal" onclick=" window.$('#miniCart').modal('toggle');">Continuar comprando</button>
           <button type="button" class="button secondary-pink" @click="checkout">Terminar Compra</button>
         </div>
       </div>
@@ -42,19 +41,18 @@
 
 <script>
 export default {
-name: "MiniCart",
-methods: {
-  checkout(){
-    this.hideModal()
-    this.$router.push('/checkout');
+  name: "BoxDetails",
+  methods: {
+    checkout(){
+      this.$emit("closeModal");
+      this.$router.push('/checkout');
+    },
+    closeModal() {
+      this.$emit("closeModal");
+    },
+    removeItem(){
+    }
   },
-  hideModal() {
-    window.$('#miniCart').modal('hide');
-  },
-  removeItem(){
-
-  }
-},
 }
 </script>
 
@@ -90,14 +88,5 @@ methods: {
   padding: 0.8rem 1rem;
   border-radius: 0.8rem;
   border-width: 0px;
-}
-.cancel {
-  padding: 0.5rem;
-  margin-right: auto;
-}
-
-.continue {
-  padding: 1rem;
-  border-radius: 1rem;
 }
 </style>

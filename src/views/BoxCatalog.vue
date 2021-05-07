@@ -10,10 +10,7 @@
         <span class="logo drop-shadow mx-auto rounded-circle mb-5"></span>
         <div class="d-flex row justify-content-md-center mb-5">
           <div class="col-md mb-3 mb-md-0">
-            <ButtonComponent href="#" text="Arma tu desayuno"></ButtonComponent>
-          </div>
-          <div class="col-md">
-            <ButtonComponent href="#" text="Los más vendidos"></ButtonComponent>
+            <ButtonComponent href="#" text="Arma tu desayuno" @click="boxDetails"></ButtonComponent>
           </div>
         </div>
       </div>
@@ -22,28 +19,31 @@
   <!-- Products -->
   <h2 class="mb-4">Platillo Salado</h2>
   <div class="my-5 d-flex flex-wrap justify-content-around">
-    <BoxCard v-for="(salado, index) in products.salados" :product="salado" :key="index" @selected="addToBox"/>
+    <BoxCard v-for="(salado, index) in products.salados" :product="salado" :key="index" @add="addToBox(salado)" @delete="deleteFromBox(salado)"/>
   </div>
   <h2 class="mb-4">Platillo Dulce</h2>
   <div class="my-5 d-flex flex-wrap justify-content-around">
-    <BoxCard v-for="(pastel, index) in products.pasteles" :product="pastel" :key="index" @selected="addToBox"/>
+    <BoxCard v-for="(pastel, index) in products.pasteles" :product="pastel" :key="index" @add="addToBox(pastel)" @delete="deleteFromBox(pastel)"/>
   </div>
 
+  <BoxDetails v-if="modalVisibility" @close="boxDetails"/>
   <NotificationCenter class="notifications" :messages="messages" @deleteNotification="deleteMessage"/>
 </template>
 
 <script>
 import Constants from '../helpers/delivery-methods'
 import ButtonComponent from '@/components/Button';
-import BoxCard from '@/components/BoxCard'
+import BoxCard from '@/components/BoxCard';
 import NotificationCenter from '@/components/NotificationCenter';
+import BoxDetails from '@/components/BoxDetails';
 
 export default {
   name: 'BoxCatalog',
   components: {
     ButtonComponent,
     BoxCard,
-    NotificationCenter
+    NotificationCenter,
+    BoxDetails,
   },
   mounted () {
     this.$http
@@ -97,29 +97,29 @@ export default {
       },
       productsInBox: [],
       messages: [],
+      modalVisibility: true,
     }
   },
   methods: {
-    addToBox(id, pName) {
-      let product = this.productsInBox.find(pid => pid == id);
-      if(product) {
-        this.productsInBox.splice(product, 1);
-      } else {
-        this.productsInBox.push(id);
-        this.notify(pName);
-      }
-      console.log(this.productsInBox);
+    addToBox(product) {
+      this.$store.commit('addToBox', product);
+      this.notify(product.name);
+    },
+    deleteFromBox(product) {
+      this.$store.commit('deleteFromBox', product);
+      this.deleteMessage(product.name);
     },
     notify(pName) {
-      // Add message to messages
       let message = "Se agregó " + pName + " a la caja!";
       this.messages.push(message);
     },
-    deleteMessage(message) {
-      let found = this.messages.find(m => m == message);
-      if(found) {
-        this.messages.splice(found, 1);
-      }
+    deleteMessage(pName) {
+      let message = "Se agregó " + pName + " a la caja!";
+      let idx = this.messages.indexOf(message);
+      this.messages.splice(idx, 1);
+    },
+    boxDetails() {
+      this.modalVisibility = !this.modalVisibility;
     }
   }
 

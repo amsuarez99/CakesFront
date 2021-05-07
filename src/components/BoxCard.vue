@@ -20,20 +20,21 @@ export default {
   props: {
     product: Object
   },
+  data() {
+    return {
+      isSelected: false,
+    }
+  },
   methods:{
     getImage(images){
       return images[0]
     },
     toggle() {
       this.isSelected = !this.isSelected;
-      this.$emit("selected", this.product.id, this.product.name);
+      this.isSelected ? this.$emit("add") :
+                   this.$emit("delete");
     }
   },
-  data() {
-    return {
-      isSelected: false,
-    }
-  }
 
 }
 </script>

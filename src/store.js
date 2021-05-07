@@ -2,11 +2,14 @@ import { createApp } from 'vue'
 import { createStore } from 'vuex'
 
 let cart = window.localStorage.getItem('cart');
+let box = window.localStorage.getItem('box');
+// let messages = window.localStorage.getItem('messages');
 // Create a new store instance.
 const store = createStore({
     state () {
         return {
             cart: cart ? JSON.parse(cart) : [],
+            box: box ? JSON.parse(box) : [],
             count : 0
         }
     },
@@ -22,11 +25,22 @@ const store = createStore({
             }else{
                 state.cart.push(item);
             }
-
             this.commit('saveData');
+        },
+        addToBox(state, product) {
+            state.box.push(product);
+            this.commit('saveData');
+            console.log(state.box);
+        },
+        deleteFromBox(state, product) {
+            let idx = state.box.indexOf(product);
+            state.box.splice(idx, 1);
+            this.commit('saveData');
+            console.log(state.box);
         },
         saveData(state){
             window.localStorage.setItem('cart', JSON.stringify(state.cart));
+            window.localStorage.setItem('box', JSON.stringify(state.box));
         },
         removeFromCart(state, p){
             let index = state.cart.indexOf(p);
