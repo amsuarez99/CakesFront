@@ -44,11 +44,13 @@ export default {
   name: "BoxDetails",
   methods: {
     checkout(){
+      this.closeModal();
       this.$emit("closeModal");
       this.$router.push('/checkout');
     },
     closeModal() {
-      this.$emit("closeModal");
+      window.$('#miniCart').modal('hide');
+
     },
     removeItem(){
     }
