@@ -97,7 +97,7 @@
   </div>
   <div class="precio">
     <h4 class="mb-3">Subtotal: ${{ $store.getters.boxPrice }}</h4>
-    <h4 class="mb-3">Total + IVA: ${{ $store.getters.boxPrice }}</h4>
+    <h4 class="mb-3">Total + IVA: ${{ $store.getters.boxPriceWithTax }}</h4>
     <ButtonComponent class="mb-3" text="Checkout" @click="pay"></ButtonComponent>
   </div>
 </template>
