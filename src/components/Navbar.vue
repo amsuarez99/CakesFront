@@ -15,8 +15,8 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/desayunos">Desayunos</router-link>
         </li>
-        <li class="carrito">
-          <a class="btn" onclick="window.$('#miniCart').modal('show');">Carrito</a>
+        <li class="carrito" v-if="isDesayunosComponent">
+          <a class="btn" onclick="window.$('#miniCart').modal('show');" >Carrito</a>
         </li>
       </ul>
       <form  class="form-inline my-2 my-lg-0">
@@ -27,7 +27,13 @@
 
 <script>
 export default {
-  name: "NavbarComponent"
+  name: "NavbarComponent",
+  computed: {
+    isDesayunosComponent() {
+      console.log(this.$route.name);
+      return this.$route.name != 'BoxCatalog'
+    }
+  },
 }
 </script>
 
@@ -39,7 +45,7 @@ export default {
   border-color: rgb(238, 236, 234) !important;
   margin: 0rem 1rem;
   transition: 0.3s;
-} 
+}
 
 .nav-item:hover {
   background-color: hsla(341,78%,87%, 1) !important;

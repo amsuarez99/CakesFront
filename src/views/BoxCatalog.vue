@@ -36,7 +36,7 @@
       <font-awesome-icon class="chevron-icon" :icon="['fas', 'chevron-right']" />
     </div>
   </div>
-  
+
 
   <BoxDetails v-if="modalVisibility" @close="boxDetails"/>
   <NotificationCenter class="notifications" :messages="messages" @deleteNotification="deleteMessage"/>

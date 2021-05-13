@@ -6,7 +6,7 @@
           <h2>Introduce tus datos</h2>
           <form @submit.prevent="onSubmit" class="mt-3">
             <div class="form-group">
-              <input
+              <input style="padding: 0.5rem"
                 type="text"
                 class="form-control"
                 id="name"
@@ -16,7 +16,7 @@
             </div>
             <br />
             <div class="form-group">
-              <input
+              <input style="padding: 0.5rem"
                 type="tel"
                 class="form-control"
                 id="telefono"
@@ -26,7 +26,7 @@
             </div>
             <br />
             <div class="form-group">
-              <input
+              <input style="padding: 0.5rem"
                 type="email"
                 class="form-control"
                 id="email"
@@ -36,7 +36,7 @@
             </div>
             <br />
             <div class="form-group">
-              <input
+              <input style="padding: 0.5rem"
                 type="text"
                 class="form-control"
                 id="address"
@@ -82,7 +82,7 @@
   </div>
   <div class="precio">
     <h4 class="mb-3">Subtotal: ${{ $store.getters.totalPrice }}</h4>
-    <h4 class="mb-3">Total + IVA: ${{ $store.getters.totalPriceWithTax }}</h4>
+    <h4 class="mb-3">Total + cobro por venta online: ${{ $store.getters.totalPriceWithTax }}</h4>
     <ButtonComponent class="mb-3" text="Checkout" @click="pay"></ButtonComponent>
   </div>
 </template>
@@ -108,46 +108,53 @@ export default {
   },
   methods: {
     pay() {
-      // data = {id:10, id:3}
-      console.log(this.$store.state.cart);
-      let test = false;
-      let local = test ? "http://localhost:8080/api/" : Constants.API;
-      let data = this.$store.state.cart.map((item) => ({
-        [item.id]: item.productQuantity,
-      }));
-      data = Object.assign({}, ...data);
-      console.log(data);
 
-      this.$http
-        .post(local + "orders/checkoutSession", {
-          products: data,
-          shippingAddress: this.address,
-          specification: "s",
-          clientName: this.name,
-          clientPhone: this.phone,
-          clientEmail: this.email,
-        })
-        .then((response) => {
-          console.log(response.data);
-          this.sessionId = response.data;
-          stripe
-            .redirectToCheckout({
-              sessionId: this.sessionId.id,
+      if(!this.name || !this.phone || !this.email || !this.address){
+        alert("Por favor completa la información requerida para seguir con el pago");
+      }else{
+        // data = {id:10, id:3}
+        console.log(this.$store.state.cart);
+        let test = false;
+        let local = test ? "http://localhost:8080/api/" : Constants.API;
+        let data = this.$store.state.cart.map((item) => ({
+          [item.id]: item.productQuantity,
+        }));
+        data = Object.assign({}, ...data);
+        console.log(data);
+
+        this.$http
+            .post(local + "orders/checkoutSession", {
+              products: data,
+              shippingAddress: this.address,
+              specification: "s",
+              clientName: this.name,
+              clientPhone: this.phone,
+              clientEmail: this.email,
             })
-            .then(function (result) {
-              alert(result.paymentStatus);
-              result.success;
-              if (result.error) {
-                alert(result.error.message);
-              }
+            .then((response) => {
+              console.log(response.data);
+              this.sessionId = response.data;
+              stripe
+                  .redirectToCheckout({
+                    sessionId: this.sessionId.id,
+                  })
+                  .then(function (result) {
+                    alert(result.paymentStatus);
+                    result.success;
+                    if (result.error) {
+                      alert(result.error.message);
+                    }
+                  })
+                  .catch(function (error) {
+                    console.error("Error:", error);
+                  });
             })
-            .catch(function (error) {
-              console.error("Error:", error);
+            .catch((error) => {
+              console.log(error);
             });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      }
+
+
     },
     onSubmit() {
       if (this.name == "") {
