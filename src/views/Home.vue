@@ -91,14 +91,19 @@
     <div class="col-md-2 d-md-flex align-items-center"><span class="d-block reel-img mx-auto my-3"></span></div>
   </div>
 </div>
+
+  <MiniCart/>
 </template>
 
 <script>
 import ButtonComponent from "@/components/Button";
+import MiniCart from '@/components/MiniCart'
+
 export default {
   name: 'Home',
   components: {
-    ButtonComponent
+    ButtonComponent,
+    MiniCart
   },
   mounted (){
     (function(d, m){
