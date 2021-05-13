@@ -28,9 +28,13 @@ const store = createStore({
             this.commit('saveData');
         },
         addToBox(state, product) {
-            state.box.push(product);
-            this.commit('saveData');
-            console.log(state.box);
+
+            let found = state.box.find(p => product.id == p.id);
+            console.log(found);
+            if(!found){
+                this.commit('saveData');
+                state.box.push(product);
+            }
         },
         deleteFromBox(state, product) {
             let idx = state.box.indexOf(product);
