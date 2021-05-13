@@ -80,6 +80,7 @@
       </div>
     </div>
   </div>
+  <br>
   <div class="precio">
     <h4 class="mb-3">Subtotal: ${{ $store.getters.totalPrice }}</h4>
     <h4 class="mb-3">Total + cobro por venta online: ${{ $store.getters.totalPriceWithTax }}</h4>
