@@ -82,7 +82,7 @@
                     {{ item.name }}
                     <p
                       class="float-right m-lg-auto-2 delete"
-                      @click="$store.commit('removeFromCart', item)"
+                      @click="$store.commit('deleteFromBox', item)"
                     >
                       &times;
                     </p>
