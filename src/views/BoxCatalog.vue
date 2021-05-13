@@ -1,30 +1,42 @@
 <template>
   <div class="circle secondary-pink"></div>
-  <div class="masthead container-fluid pt-5 my-4">
-    <!-- Masthead -->
-      <div class="mx-auto w-75">
-        <h1 class="display-6 mb-4">Catálogo de <b>Desayunos</b></h1>
-        <p class="p-3 text-md-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem in, dolores accusantium sed eaque provident eos blanditiis beatae. Odio nihil perspiciatis quia. Praesentium ipsa, dicta explicabo quam molestiae eveniet debitis.</p>
-      </div>
-      <div class="w-75 mx-auto">
-        <span class="logo drop-shadow mx-auto rounded-circle mb-5"></span>
-        <div class="d-flex row justify-content-md-center mb-5">
-          <div class="col-md mb-3 mb-md-0">
-            <ButtonComponent href="#" text="Arma tu desayuno" @click="boxDetails"></ButtonComponent>
-          </div>
-        </div>
-      </div>
+  <div class="container-fluid pt-5 my-4">
+    <div class="mx-auto w-75">
+      <h1 class="display-6 mb-4">Catálogo de <b>Desayunos</b></h1>
+      <p class="p-3 text-md-center">Arma tu desayuno, puedes escoger entre una variedad de sabores combinando un desayuno salado y dulce a tu gusto. Disfruta de un desayuno gourmet personalizado.</p>
+    </div>
   </div>
+  <div class="banner">
+    <img class="banner-img drop-shadow" src="img/banner-desayunos.png" alt="">
+  </div>
+  <ButtonComponent class="my-5" href="#" text="Arma tu desayuno" @click="boxDetails"></ButtonComponent>
 
   <!-- Products -->
   <h2 class="mb-4">Platillo Salado</h2>
-  <div class="my-5 d-flex flex-wrap justify-content-around">
-    <BoxCard v-for="(salado, index) in products.salados" :product="salado" :key="index" @add="addToBox(salado)" @delete="deleteFromBox(salado)"/>
+  <div class="d-flex mb-4">
+    <div class="chevron">
+      <font-awesome-icon class="chevron-icon" :icon="['fas', 'chevron-left']" />
+    </div>
+    <div class="card-container">
+      <BoxCard class="card" v-for="(salado, index) in products.salados" :product="salado" :key="index" @add="addToBox(salado)" @delete="deleteFromBox(salado)"/>
+    </div>
+    <div class="chevron">
+      <font-awesome-icon class="chevron-icon" :icon="['fas', 'chevron-right']" />
+    </div>
   </div>
   <h2 class="mb-4">Platillo Dulce</h2>
-  <div class="my-5 d-flex flex-wrap justify-content-around">
-    <BoxCard v-for="(pastel, index) in products.pasteles" :product="pastel" :key="index" @add="addToBox(pastel)" @delete="deleteFromBox(pastel)"/>
+  <div class="d-flex mb-4">
+    <div class="chevron">
+      <font-awesome-icon class="chevron-icon" :icon="['fas', 'chevron-left']" />
+    </div>
+    <div class="card-container">
+      <BoxCard class="card" v-for="(pastel, index) in products.pasteles" :product="pastel" :key="index" @add="addToBox(pastel)" @delete="deleteFromBox(pastel)"/>
+    </div>
+    <div class="chevron">
+      <font-awesome-icon class="chevron-icon" :icon="['fas', 'chevron-right']" />
+    </div>
   </div>
+  
 
   <BoxDetails v-if="modalVisibility" @close="boxDetails"/>
   <NotificationCenter class="notifications" :messages="messages" @deleteNotification="deleteMessage"/>
@@ -97,7 +109,7 @@ export default {
       },
       productsInBox: [],
       messages: [],
-      modalVisibility: true,
+      modalVisibility: false,
     }
   },
   methods: {
@@ -129,7 +141,7 @@ export default {
 <style scoped>
 .circle {
   position: absolute;
-  z-index: -1;
+  z-index: -9999;
   top: 0;
   left: 0;
   width: 100%;
@@ -143,7 +155,7 @@ b {
 
 .logo {
   display: block;
-  width: 15rem;
+  width: 100vw;
   height: 15rem;
   background-color: #4E4E4E;
 }
@@ -155,8 +167,44 @@ b {
 }
 
 .notifications {
-  position: sticky;
+  position: top;
   bottom: 0;
   z-index: 1000;
 }
+
+.card {
+  flex: 0 0 auto;
+  margin-right: 3rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-grow: 2;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2rem;
+
+}
+
+
+.chevron {
+  padding: 0 1rem;
+}
+
+.chevron-icon {
+  position: relative;
+  top: 50%
+}
+
+.banner {
+  position: relative;
+  z-index: -9999;
+}
+
+.banner-img {
+  width: 100%;
+}
+
+
 </style>

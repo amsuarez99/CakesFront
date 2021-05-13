@@ -80,6 +80,8 @@ name: "BoxDetails",
   padding: 1rem;
   border-top: 2px dashed lightcoral;
   border-bottom: 2px dashed lightcoral;
+  overflow: scroll;
+  max-height: 50vh;
 }
 
 .modal-footer {

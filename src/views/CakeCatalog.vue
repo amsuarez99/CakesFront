@@ -1,16 +1,17 @@
 <template>
   <div class="circle secondary-pink"></div>
-  <div class="masthead container-fluid pt-5 my-4">
-    <!-- Masthead -->
-      <div class="mx-auto w-75">
-        <h1 class="display-6 mb-4">Catálogo de <b>Pasteles</b></h1>
-        <p class="p-3 text-md-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem in, dolores accusantium sed eaque provident eos blanditiis beatae. Odio nihil perspiciatis quia. Praesentium ipsa, dicta explicabo quam molestiae eveniet debitis.</p>
-      </div>
-      <span class="logo mx-auto drop-shadow mx-auto rounded-circle mb-5"></span>
+  <div class="container-fluid pt-5 my-4">
+    <div class="mx-auto w-75">
+      <h1 class="display-6 mb-4">Catálogo de <b>Pasteles</b></h1>
+      <p class="p-3 text-md-center">Encuentra una gran variedad de sabores hechos especiales para ti. Consiente a tu persona favorita con su pastel favorito hecho 100% casero.</p>
+    </div>
+  </div>
+  <div class="banner">
+    <img class="banner-img drop-shadow" src="img/banner-pasteles.png" alt="">
   </div>
 
   <!-- Products -->
-  <h2 class="mb-4">Encuentra tu favorito</h2>
+  <h2 class="my-4">Encuentra tu favorito</h2>
   <div class="my-5 d-flex flex-wrap justify-content-around">
     <CardComponent v-for="(product, index) in products" :product="product" :key="index"></CardComponent>
   </div>
@@ -58,7 +59,7 @@ export default {
 <style scoped>
 .circle {
   position: absolute;
-  z-index: -1;
+  z-index: -9999;
   top: 0;
   left: 0;
   width: 100%;
@@ -81,5 +82,14 @@ b {
   p {
     font-size: 0.8rem;
   }
+}
+
+.banner {
+  position: relative;
+  z-index: -9999;
+}
+
+.banner-img {
+  width: 100%;
 }
 </style>

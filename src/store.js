@@ -67,10 +67,9 @@ const store = createStore({
                 console.log(p);
                 return p.productPrice * p.productQuantity;
             }).reduce((anterior, actual) => {
-                return anterior + actual
+                return anterior + actual;
             })
-            s *= 1.036
-            s += 3
+            s *= 1.05;
             return s;
         }
     }

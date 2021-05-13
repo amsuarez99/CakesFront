@@ -11,9 +11,12 @@ import { faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faChevronRight } from '@fortawesome/free-solid-svg-icons'
 
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-library.add(faInstagram, faFacebookF, faWhatsapp,faCheckCircle, faTimesCircle, faShoppingCart, faTimes);
+library.add(faInstagram, faFacebookF, faWhatsapp,faCheckCircle, 
+    faTimesCircle, faChevronLeft, faChevronRight, faShoppingCart, faTimes);
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'

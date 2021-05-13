@@ -4,14 +4,14 @@
     <span class="logo mx-auto rounded-circle mb-4"></span>
     <h1>Repostería casera desde el 1998</h1>
     <div class="w-75 mx-auto">
-      <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem in, dolores accusantium sed eaque provident eos blanditiis beatae. Odio nihil perspiciatis quia. Praesentium ipsa, dicta explicabo quam molestiae eveniet debitis.</p>
+      <p class="lead">El sazón de cocina que te recuerda a tu hogar. Más de 20 años de experiencia, seguimos trabajando para darte la mejor calidad y sabor. Te ofrecemos pasteles, cupcakes, desayunos gourmets 100% casero para toda ocasión y más.</p>
       <hr class="my-4">
       <div class="d-flex row justify-content-md-center mb-5">
         <div class="col-md mb-3 mb-md-0">
-          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
+          <ButtonComponent href="#" text="Ver Pasteles"></ButtonComponent>
         </div>
         <div class="col-md">
-          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
+          <ButtonComponent href="#" text="Cajas de Desayuno"></ButtonComponent>
         </div>
       </div>
       <div class="d-flex socials justify-content-center justify-content-md-end">
@@ -39,7 +39,7 @@
       <div class="d-flex flex-row align-items-center">
         <div class="p-5 intro-text">
           <h2 class="display-6">Soy Cecilia Ponce</h2>
-          <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut laboreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
+          <p class="">En 1998 encontre mi pasión en la reposteria, con el apoyo de mi familia y amigos decidí compartir mi pasión con las personas y emprendi Cecy Ponce Cakes. Conforme pasan los años he aprendido nuevas técnicas y mi amor por la cocina sigue creciendo.</p>
         </div>
       </div>
     </div>
@@ -49,13 +49,13 @@
 <!-- Catalog -->
 <div class="container catalog py-5 mb-3">
   <div class="row my-5 my-md-0">
-    <span class="col-md-6 d-block box-img"></span>
+    <span class="col-md-6 d-block cake-img"></span>
     <div class="col-md-6">
       <div class="d-md-flex align-items-center">
         <div class="py-4">
           <h2 class="my-3">Catálogo <b>Pasteles</b></h2>
-          <p class="text-md-justify p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae reprehenderit consequuntur, maxime praesentium laboriosam, doloribus sunt magni illo officia tempora voluptas. Perferendis, voluptatibus! In necessitatibus adipisci consequatur unde libero?</p>
-          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
+          <p class="text-md-justify p-3">Encuentra el pastel perfecto para toda ocasión. Te ofrecemos una variedad de sabores desde milky way, zanahoria, cheesecake de piña colada, entre otros. Contamos con servicio a domicilio en Monterrey y área metropolitana.</p>
+          <ButtonComponent href="#" text="CATÁLOGO PASTELES"></ButtonComponent>
         </div>
       </div>
     </div>
@@ -65,8 +65,8 @@
       <div class="d-md-flex align-items-center">
         <div class="py-4">
           <h2 class="my-3">Catálogo <b>Cajas de Desayuno</b></h2>
-          <p class="text-md-justify p-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione beatae reprehenderit consequuntur, maxime praesentium laboriosam, doloribus sunt magni illo officia tempora voluptas. Perferendis, voluptatibus! In necessitatibus adipisci consequatur unde libero?</p>
-          <ButtonComponent href="#" text="Lorem Ipsum"></ButtonComponent>
+          <p class="text-md-justify p-3">La opción perfecta para desayunos, el mejor sabor y una categoria gourmet que estamos seguros, te encantara. Puedes armar tu desayuno con una variedad de opciones, da clic para ver más.</p>
+          <ButtonComponent href="#" text="CAJAS DE DESAYUNO"></ButtonComponent>
         </div>
       </div>
     </div>
@@ -82,7 +82,7 @@
         <div class="p-5 reel-text">
           <h2 class="d-block">Un poco de mi cocina</h2>
           <h2 class="d-block">Horneado Casero</h2>
-          <p class="d-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus sed fuga delectus dolores laudantium magni laborum doloremque dolore, ab explicabo sint exercitationem iure molestias dignissimos, dolorem quidem eius ad consequatur.</p>
+          <p class="d-block">No hay nada mejor que disfrutar de un tiempo cocinando para disfrutar el sazón casero e ir mejorando día con día la calidad de todo lo que les ofrecemos, hecho 100% casero, desde un hogar hasta sus manos.</p>
         </div>
       </div>
     </div>
@@ -204,8 +204,18 @@ p {
   }
 }
 
+.cake-img {
+  background-image:url("/img/pastel.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .box-img {
-  background-color:#4E4E4E;
+  background-image:url("/img/desayuno2.jpg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .socials > a {
