@@ -127,17 +127,16 @@ export default {
   },
   methods: {
     pay() {
-      // data = {id:10, id:3}
-      console.log(this.$store.state.cart);
       let test = false;
       let local = test ? "http://localhost:8080/api/" : Constants.API;
-      let data = this.$store.state.cart.map((item) => ({
-        [item.id]: item.productQuantity,
+      let data = this.$store.state.box.map((item) => ({
+        [item.id]: 1,
       }));
       data = Object.assign({}, ...data);
-      let box = this.$store.state.box.map((item) => {
-        item.id
-      })
+      let box = this.$store.state.box.map(element => {
+        return element.id;
+      });
+      console.log(data);
       console.log(box);
 
       this.$http

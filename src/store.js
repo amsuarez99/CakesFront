@@ -71,7 +71,16 @@ const store = createStore({
             })
             s *= 1.05;
             return s;
-        }
+        },
+        boxPrice: state => {
+            let s = state.box.map(p => {
+                console.log(p);
+                return p.productPrice * p.productQuantity;
+            }).reduce((anterior, actual) => {
+                return anterior + actual
+            })
+            return s;
+        },
     }
 })
 
