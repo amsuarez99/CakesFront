@@ -29,8 +29,11 @@
             </ul>
           </div>
           <div class="modal-footer">
+            <button class="modal-default-button" @click="hideModal">
+              Continuar comprando
+            </button>
             <button class="modal-default-button secondary-pink" @click="checkout">
-              OK
+              Checkout
             </button>
           </div>
         </div>

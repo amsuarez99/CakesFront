@@ -6,7 +6,7 @@
         <div class="modal-header">
           <h5 class="modal-title">Caja Personalizada</h5>
           <button type="button" @click="closeModal" class="close" data-dismiss="modal" aria-label="Close">
-            <font-awesome-icon class="close-icon" :icon="['fas', 'times-circle']" />
+              &times;
           </button>
         </div>
         <div class="modal-body">
@@ -30,6 +30,7 @@
           </ul>
         </div>
         <div class="modal-footer d-flex">
+          <button type="button" class="button" @click="closeModal">Continuar comprando</button>
           <button type="button" class="button secondary-pink" @click="checkout">Terminar Compra</button>
         </div>
       </div>
@@ -52,8 +53,6 @@ export default {
       window.$('#miniCart').modal('hide');
 
     },
-    removeItem(){
-    }
   },
 }
 </script>

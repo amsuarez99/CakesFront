@@ -37,16 +37,13 @@
     </div>
   </div>
 
-
   <BoxDetails v-if="modalVisibility" @close="boxDetails"/>
-  <NotificationCenter class="notifications" :messages="messages" @deleteNotification="deleteMessage"/>
 </template>
 
 <script>
 import Constants from '../helpers/delivery-methods'
 import ButtonComponent from '@/components/Button';
 import BoxCard from '@/components/BoxCard';
-import NotificationCenter from '@/components/NotificationCenter';
 import BoxDetails from '@/components/BoxDetails';
 
 export default {
@@ -54,7 +51,6 @@ export default {
   components: {
     ButtonComponent,
     BoxCard,
-    NotificationCenter,
     BoxDetails,
   },
   mounted () {
@@ -115,23 +111,17 @@ export default {
   methods: {
     addToBox(product) {
       this.$store.commit('addToBox', product);
-      this.notify(product.name);
+      this.boxDetails();
     },
     deleteFromBox(product) {
       this.$store.commit('deleteFromBox', product);
-      this.deleteMessage(product.name);
-    },
-    notify(pName) {
-      let message = "Se agregó " + pName + " a la caja!";
-      this.messages.push(message);
-    },
-    deleteMessage(pName) {
-      let message = "Se agregó " + pName + " a la caja!";
-      let idx = this.messages.indexOf(message);
-      this.messages.splice(idx, 1);
     },
     boxDetails() {
-      this.modalVisibility = !this.modalVisibility;
+      if (!Array.isArray(this.$store.state.box) || !this.$store.state.box.length) {
+        alert("Por favor, agrega productos al carrito");
+      } else {
+        this.modalVisibility = !this.modalVisibility;
+      }
     }
   }
 

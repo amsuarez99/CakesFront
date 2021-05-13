@@ -92,7 +92,7 @@ var stripe = window.Stripe(
   "pk_test_51IkDS2A1JkC9eFwK4k3AAssy29KSprhfWNxx8vOW0lBfFe6svjt8ktaqkFYEAcFn6WzGSeDw27pci0iV5XqIEU7i00LQKemw9i"
 );
 import Constants from "../helpers/delivery-methods";
-import ButtonComponent from "../components/Button"
+import ButtonComponent from "../components/Button";
 export default {
   name: "Home",
   data() {
@@ -105,7 +105,7 @@ export default {
     };
   },
   components: {
-    ButtonComponent
+    ButtonComponent,
   },
   methods: {
     pay() {

@@ -15,7 +15,7 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/desayunos">Desayunos</router-link>
         </li>
-        <li class="carrito" v-if="isDesayunosComponent">
+        <li class="carrito" v-if="isCakeOrHome">
           <a class="btn" onclick="window.$('#miniCart').modal('show');" >Carrito</a>
         </li>
       </ul>
@@ -29,9 +29,8 @@
 export default {
   name: "NavbarComponent",
   computed: {
-    isDesayunosComponent() {
-      console.log(this.$route.name);
-      return this.$route.name != 'BoxCatalog'
+    isCakeOrHome() {
+      return (this.$route.name == "CakeCatalog" || this.$route.name == "Home")
     }
   },
 }

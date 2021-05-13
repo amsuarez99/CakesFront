@@ -45,7 +45,7 @@
               />
             </div>
             <br />
-            <textarea class="form-control" placeholder="Especificaciones" type="text" name="Text1" cols="40" rows="5" :v-model="specification"></textarea>
+            <textarea class="form-control" id="specification" placeholder="Especificaciones (Opcional)" type="text" name="Text1" cols="40" rows="5" v-model="specification"></textarea>
           </form>
         </div>
       </div>
@@ -57,13 +57,13 @@
               <input
                 type="text"
                 class="form-control"
-                id="address"
+                id="addresse"
                 placeholder="Dirección"
                 v-model="addresse"
               />
             </div>
             <br />
-            <textarea class="form-control" placeholder="Dedicatoria" type="text" name="Text1" cols="40" rows="5" :v-model="dedication"></textarea>
+            <textarea class="form-control" name="dedication" id="dedication" placeholder="Dedicatoria" cols="40" rows="5" v-model="dedication"></textarea>
           </form>
         </div>
       </div>
@@ -95,12 +95,11 @@
         </div>
     </div>
   </div>
-  <!-- <div class="precio">
-    <h4 class="mb-3">Subtotal: ${{ $store.getters.totalPrice }}</h4>
-    <h4 class="mb-3">Total + IVA: ${{ $store.getters.totalPriceWithTax }}</h4>
+  <div class="precio">
+    <h4 class="mb-3">Subtotal: ${{ $store.getters.boxPrice }}</h4>
+    <h4 class="mb-3">Total + IVA: ${{ $store.getters.boxPrice }}</h4>
     <ButtonComponent class="mb-3" text="Checkout" @click="pay"></ButtonComponent>
-  </div> -->
-  <ButtonComponent class="mb-3" text="Checkout" @click="pay"></ButtonComponent>
+  </div>
 </template>
 <script>
 var stripe = window.Stripe(
@@ -117,9 +116,9 @@ export default {
       phone: null,
       email: null,
       address: null,
-      dedication: null,
-      addresse: null,
-      specification: null,
+      dedication: "",
+      addresse: "",
+      specification: "",
     };
   },
   components: {
@@ -127,6 +126,9 @@ export default {
   },
   methods: {
     pay() {
+      if(!this.name || !this.phone || !this.email || !this.address || !this.dedication || !this.addresse){
+        alert("Por favor completa la información requerida para seguir con el pago");
+      }else{
       let test = false;
       let local = test ? "http://localhost:8080/api/" : Constants.API;
       let data = this.$store.state.box.map((item) => ({
@@ -136,8 +138,6 @@ export default {
       let box = this.$store.state.box.map(element => {
         return element.id;
       });
-      console.log(data);
-      console.log(box);
 
       this.$http
         .post(local + "orders/checkoutSession", {
@@ -174,6 +174,7 @@ export default {
         .catch((error) => {
           console.log(error);
         });
+      }
     },
     onSubmit() {
       if (this.name == "") {
@@ -216,6 +217,8 @@ export default {
 
 .cart {
   border: 0.5rem dashed lightcoral;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .product-content {

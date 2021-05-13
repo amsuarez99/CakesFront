@@ -33,7 +33,7 @@ import "bootstrap/dist/js/bootstrap.min";
 import "./assets/app.css";
 import store from "./store";
 
-createApp(App)
+const app = createApp(App)
     .use(router)
     .use(VueAxios, axios)
     .use(VueSnap)
@@ -44,6 +44,9 @@ createApp(App)
     .component('NavbarComponent', NavbarComponent)
     .mount('#app')
 
+app.config = {
+    globalProperties: {}
+};
 
-App.prototype.$http = axios;
-App.prototype.$store = store;
+app.config.globalProperties.$http = axios;
+app.config.globalProperties.$store = store;

@@ -47,8 +47,9 @@ const store = createStore({
             state.cart.splice(index,1);
             this.commit('saveData');
         },
-        removeAllFromCart(state){
+        removeAllItems(state){
             state.cart = [];
+            state.box = [];
             this.commit('saveData');
         }
     },
@@ -74,13 +75,21 @@ const store = createStore({
         },
         boxPrice: state => {
             let s = state.box.map(p => {
-                console.log(p);
-                return p.productPrice * p.productQuantity;
+                return p.price;
             }).reduce((anterior, actual) => {
-                return anterior + actual
+                return anterior + actual;
             })
             return s;
         },
+        boxPriceWithTax: state => {
+            let s = state.box.map(p => {
+                return p.price;
+            }).reduce((anterior, actual) => {
+                return anterior + actual;
+            })
+            s *= 1.05;
+            return s;
+        }
     }
 })
 

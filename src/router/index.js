@@ -29,7 +29,7 @@ const routes = [
     },
     {
         path: '/checkout',
-        name: 'checkout',
+        name: 'Checkout',
         component: Checkout
     },
     {

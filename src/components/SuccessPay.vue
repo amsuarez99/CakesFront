@@ -27,8 +27,7 @@ name: "SuccessPay",
   },
   methods:{
     onSubmit(){
-      this.$store.commit('removeAllFromCart');
-      console.log("BYE");
+      this.$store.commit('removeAllItems');
       this.$router.push('/');
     }
   },
