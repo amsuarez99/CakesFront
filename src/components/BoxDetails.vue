@@ -29,7 +29,7 @@
             </ul>
           </div>
           <div class="modal-footer">
-            <button class="modal-default-button secondary-pink" @click="hideModal">
+            <button class="modal-default-button secondary-pink" @click="checkout">
               OK
             </button>
           </div>
@@ -42,15 +42,10 @@
 <script>
 export default {
 name: "BoxDetails",
-  data() {
-    return {
-      productsInBox: []
-    }
-  },
   methods: {
     checkout(){
       this.$emit("close");
-      this.$router.push('/checkout');
+      this.$router.push('/boxcheckout');
     },
     hideModal() {
       this.$emit("close");

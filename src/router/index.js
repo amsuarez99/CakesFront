@@ -4,6 +4,7 @@ import Checkout from '../views/Checkout.vue';
 import BoxCatalog from '../views/BoxCatalog.vue';
 import CakeCatalog from '../views/CakeCatalog.vue';
 import SuccessPayment from '../views/SucessPayment.vue';
+import BoxCheckout from '../views/BoxCheckout.vue';
 
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         path: '/checkout',
         name: 'checkout',
         component: Checkout
+    },
+    {
+        path: '/boxcheckout',
+        name: 'BoxCheckout',
+        component: BoxCheckout
     }
 ]
 
