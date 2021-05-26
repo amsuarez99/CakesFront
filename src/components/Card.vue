@@ -17,14 +17,21 @@
         :price="product.price.toString()"
         :productId="product.id"
     />
+    <VerDetalles
+        :image="getImage(product.fotos)"
+        :name="product.name"
+        :price="product.price.toString()"
+        :productId="product.id"
+    />
   </div>
 </template>
 
 <script>
 import AddToCart from "@/components/AddToCart";
+import VerDetalles from "@/components/VerDetalles";
 export default {
   name: 'CardComponent',
-  components:{AddToCart},
+  components:{AddToCart, VerDetalles},
   props: {
     product: Object
   },
