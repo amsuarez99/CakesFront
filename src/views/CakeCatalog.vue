@@ -18,17 +18,21 @@
 
   <!-- Modal -->
   <MiniCart/>
+  <ModalDetalles/>
 </template>
 
 <script>
 import Constants from '../helpers/delivery-methods'
 import CardComponent from '@/components/Card'
 import MiniCart from '@/components/MiniCart'
+import ModalDetalles from '@/components/ModalDetalles'
+
 export default {
   name: 'CakeCatalog',
   components: {
     CardComponent,
-    MiniCart
+    MiniCart,
+    ModalDetalles
   },
   mounted() {
     this.fetchPasteles()

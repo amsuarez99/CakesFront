@@ -4,18 +4,13 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content primary-pink">
         <div class="modal-header">
-          <h5 class="modal-title">Caja Personalizada</h5>
-          <button type="button" @click="closeModal" class="close" data-dismiss="modal" aria-label="Close">
-              &times;
-          </button>
+          <h5 class="modal-title">Detalles {{item.productName}}</h5>
         </div>
         <div class="modal-body">
-
-                <img v-bind:src="item.productImage" width="80px" class="align-self-center" alt="...">
+              <img v-bind:src="item.productImage" width="80px" class="align-self-center" alt="...">
               <div class="media-body">
                 <h5 class="mt-2">
-                  {{item.productName}}
-
+                  {{item.description}}
                 </h5>
 
                 <p class="mt-0">
@@ -43,6 +38,7 @@ export default {
   methods: {
     closeModal() {
       window.$('#modDetalles').modal('hide');
+
     },
   },
 }
