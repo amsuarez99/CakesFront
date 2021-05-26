@@ -93,20 +93,17 @@
 </div>
 
   <MiniCart/>
-  <ModalDetalles/>
 </template>
 
 <script>
 import ButtonComponent from "@/components/Button";
 import MiniCart from '@/components/MiniCart'
-import ModalDetalles from '@/components/ModalDetalles'
 
 export default {
   name: 'Home',
   components: {
     ButtonComponent,
-    MiniCart,
-    ModalDetalles
+    MiniCart
   },
   mounted (){
     (function(d, m){
