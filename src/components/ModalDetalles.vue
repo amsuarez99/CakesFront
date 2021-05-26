@@ -4,15 +4,19 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content primary-pink">
         <div class="modal-header">
-          <h5 class="modal-title">Detalles {{item.productName}}</h5>
+          <h5 class="modal-title">Detalles del Producto</h5>
         </div>
         <div class="modal-body">
-              <img v-bind:src="item.productImage" width="80px" class="align-self-center" alt="...">
+          <ul>
+            <li v-for="(item,index) in $store.state.cart" :key="index" class="media">
+                <img v-bind:src="item.productImage" width="80px" class="align-self-center" alt="...">
               <div class="media-body">
                 <h5 class="mt-2">
-                  {{item.description}}
+                  {{item.productName}}
                 </h5>
-
+                <p class="mt-0">
+                  {{product}}
+                </p>
                 <p class="mt-0">
                   ${{item.productPrice}} mxn
                 </p>
@@ -20,7 +24,8 @@
                   Cantidad: {{item.productQuantity}}
                 </p>
               </div>
-
+            </li>
+          </ul>
         </div>
         <div class="modal-footer d-flex">
           <button type="button" class="button" @click="closeModal">Cerrar Detalles</button>
