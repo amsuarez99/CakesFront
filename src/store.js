@@ -3,8 +3,6 @@ import { createStore } from 'vuex'
 
 let cart = window.localStorage.getItem('cart');
 let box = window.localStorage.getItem('box');
-// let messages = window.localStorage.getItem('messages');
-// Create a new store instance.
 const store = createStore({
     state () {
         return {

@@ -1,27 +1,29 @@
 <template>
-<div class="masthead container-fluid py-5 mb-3">
+<div class="masthead container-fluid py-5">
   <!-- Masthead -->
-    <span class="logo mx-auto rounded-circle mb-4"></span>
-    <h1>Repostería casera desde el 1998</h1>
-    <div class="w-75 mx-auto">
-      <p class="lead">El sazón de cocina que te recuerda a tu hogar. Más de 20 años de experiencia, seguimos trabajando para darte la mejor calidad y sabor. Te ofrecemos pasteles, cupcakes, desayunos gourmets 100% casero para toda ocasión y más.</p>
-      <hr class="my-4">
+  <div class="banner-img"></div>
+    <div class="mx-auto boxed">
+      <img src="/img/logo.png" alt="Cecy Ponce Cakes logo" class="logo mx-auto">
+      <span class="logo mx-auto rounded-circle"></span>
+      <h2>Repostería casera desde el 1989</h2>
+      <p class="mb-1">El sazón de cocina que te recuerda a tu hogar. Más de 30 años de experiencia, seguimos trabajando para darte la mejor calidad y sabor. Te ofrecemos pasteles, cupcakes, desayunos gourmets 100% casero para toda ocasión y más.</p>
+      <hr class="mb-4">
       <div class="d-flex row justify-content-md-center mb-5">
         <div class="col-md mb-3 mb-md-0">
-          <ButtonComponent href="#" text="Ver Pasteles"></ButtonComponent>
+          <ButtonComponent text="Ver Pasteles" @click="goTo('/pasteles')"></ButtonComponent>
         </div>
         <div class="col-md">
-          <ButtonComponent href="#" text="Cajas de Desayuno"></ButtonComponent>
+          <ButtonComponent text="Cajas de Desayunos" @click="goTo('/desayunos')"></ButtonComponent>
         </div>
       </div>
       <div class="d-flex socials justify-content-center justify-content-md-end">
-        <a href="" class="bg-brown rounded-circle mx-1">
+        <a href="https://www.instagram.com/cecyponcecakes" target="_blank" class="bg-brown rounded-circle mx-1">
           <font-awesome-icon :icon="['fab', 'instagram']" />
         </a>
-        <a href="" class="bg-brown rounded-circle mx-1">
+        <a href="https://www.facebook.com/cecyponcecakes" target="_blank" class="bg-brown rounded-circle mx-1">
           <font-awesome-icon :icon="['fab', 'facebook-f']" />
         </a>
-        <a href="" class="bg-brown rounded-circle mx-1">
+        <a href="#" class="bg-brown rounded-circle mx-1">
           <font-awesome-icon :icon="['fab', 'whatsapp']" />
         </a>
       </div>
@@ -31,15 +33,14 @@
 <!-- Intro -->
 <div class="container-fluid py-5 mb-3 secondary-pink">
   <div class="row">
-    <div class="col-md-4 photo-container">
-      <!-- photo -->
-      <span class="photo rounded-circle mx-auto mb-4"></span>
+    <div class="col-md-6">
+      <img class="photo mx-auto mb-4" src="/img/fam1.jpeg" alt="">
     </div>
-    <div class="col-md-8 d-flex">
+    <div class="col-md-6 d-flex">
       <div class="d-flex flex-row align-items-center">
-        <div class="p-5 intro-text">
-          <h2 class="display-6">Soy Cecilia Ponce</h2>
-          <p class="">En 1998 encontre mi pasión en la reposteria, con el apoyo de mi familia y amigos decidí compartir mi pasión con las personas y emprendi Cecy Ponce Cakes. Conforme pasan los años he aprendido nuevas técnicas y mi amor por la cocina sigue creciendo.</p>
+        <div class="p-3 intro-text">
+          <h2>Soy Cecilia Ponce</h2>
+          <p>En 1989 encontre mi pasión en la reposteria, con el apoyo de mi familia y amigos decidí compartir mi pasión con las personas y emprendi Cecy Ponce Cakes. Conforme pasan los años he aprendido nuevas técnicas y mi amor por la cocina sigue creciendo.</p>
         </div>
       </div>
     </div>
@@ -55,7 +56,7 @@
         <div class="py-4">
           <h2 class="my-3">Catálogo <b>Pasteles</b></h2>
           <p class="text-md-justify p-3">Encuentra el pastel perfecto para toda ocasión. Te ofrecemos una variedad de sabores desde milky way, zanahoria, cheesecake de piña colada, entre otros. Contamos con servicio a domicilio en Monterrey y área metropolitana.</p>
-          <ButtonComponent href="#" text="CATÁLOGO PASTELES"></ButtonComponent>
+          <ButtonComponent @click="goTo('/pasteles')" text="CATÁLOGO PASTELES"></ButtonComponent>
         </div>
       </div>
     </div>
@@ -66,7 +67,7 @@
         <div class="py-4">
           <h2 class="my-3">Catálogo <b>Cajas de Desayuno</b></h2>
           <p class="text-md-justify p-3">La opción perfecta para desayunos, el mejor sabor y una categoria gourmet que estamos seguros, te encantara. Puedes armar tu desayuno con una variedad de opciones, da clic para ver más.</p>
-          <ButtonComponent href="#" text="CAJAS DE DESAYUNO"></ButtonComponent>
+          <ButtonComponent @click="goTo('/desayunos')" text="CAJAS DE DESAYUNO"></ButtonComponent>
         </div>
       </div>
     </div>
@@ -77,18 +78,18 @@
 <!-- Reel -->
 <div class="container-fluid reel secondary-pink py-5">
   <div class="row">
-    <div class="col-md-6 d-flex">
+    <div class="col-xl-3 d-flex">
       <div class="d-flex flex-row align-items-center">
         <div class="p-5 reel-text">
           <h2 class="d-block">Un poco de mi cocina</h2>
           <h2 class="d-block">Horneado Casero</h2>
-          <p class="d-block">No hay nada mejor que disfrutar de un tiempo cocinando para disfrutar el sazón casero e ir mejorando día con día la calidad de todo lo que les ofrecemos, hecho 100% casero, desde un hogar hasta sus manos.</p>
+          <p class="d-block text-md-justify">No hay nada mejor que disfrutar de un tiempo cocinando para disfrutar el sazón casero e ir mejorando día con día la calidad de todo lo que les ofrecemos, hecho 100% casero, desde un hogar hasta sus manos.</p>
         </div>
       </div>
     </div>
-    <div class="col-md-2 d-md-flex align-items-center"><span class="d-block reel-img mx-auto my-3"></span></div>
-    <div class="col-md-2 d-md-flex align-items-center"><span class="d-block reel-img mx-auto my-3"></span></div>
-    <div class="col-md-2 d-md-flex align-items-center"><span class="d-block reel-img mx-auto my-3"></span></div>
+    <img class="col-xl-3 reel-img my-3" src="/img/reel1.jpg" alt="">
+    <img class="col-xl-3 reel-img my-3" src="/img/reel2.jpg" alt="">
+    <img class="col-xl-3 reel-img my-3" src="/img/reel3.jpg" alt="">
   </div>
 </div>
 
@@ -115,6 +116,11 @@ export default {
       window.kommunicate = m; m._globals = kommunicateSettings;
     })(document, window.kommunicate || {});
   },
+  methods: {
+    goTo(route) {
+      this.$router.push(route);
+    }
+  }
 }
 </script>
 
@@ -144,11 +150,6 @@ p {
   min-height: 8rem;
 }
 
-.reel-img {
-  width: 8rem;
-  height: 8rem;
-}
-
 .media {
   display: block;
   width: 3rem;
@@ -157,18 +158,58 @@ p {
 }
 
 .photo {
-  display: block;
-  width: 15em;
-  height: 15em;
-  background-color: #4E4E4E;
+  max-width: 80%;
+  border-radius: 1rem;
 }
 
-.photo-container {
-  border-right: 3px solid lightgray;
+.banner-img {
+  background-image: url("/img/reel2.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  filter: blur(3px);
+  z-index: -9999;
+  top: 0;
+  left: 0;
+}
+
+.masthead {
+  position: relative;
+  color: white;
+}
+
+.masthead p, .masthead a {
+ font-weight: 500;
+}
+
+.boxed {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem 5rem;
+  border-radius: 1rem;
+  width: 80%;
+}
+
+.boxed > p {
+  width: 70%;
+  margin: 0 auto;
 }
 
 .intro-text > * {
   text-align: left;
+  width: 60%;
+}
+
+p {
+  font-size: 1.1rem !important;
+  line-height: 2rem;
+}
+
+h2 {
+  font-size: 2.5rem !important;
+  font-weight: 700;
 }
 
 .reel>* {
@@ -176,15 +217,16 @@ p {
 }
 
 .reel-img {
-  background-color: #4E4E4E;
+  max-width: 40vw;
+  border-radius: 1rem;
+  margin: 0 auto;
 }
 
 
 .logo {
-  display: block;
-  background-color:#4E4E4E;
-  width: 15rem;
-  height: 15rem;
+  min-width: 5rem;
+  min-height: 5rem;
+  width: 25%;
 }
 
 @media screen and (max-width: 767px) {
@@ -202,11 +244,6 @@ p {
   }
   .reel-text > p, .reel-text > h2 {
     text-align: center;
-  }
-
-  .reel-img {
-    width: 15rem;
-    height: 15rem;
   }
 }
 

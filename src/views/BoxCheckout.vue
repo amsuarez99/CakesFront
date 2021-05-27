@@ -6,7 +6,7 @@
           <h2>Introduce tus datos</h2>
           <form @submit.prevent="onSubmit" class="mt-3">
             <div class="form-group">
-              <input
+              <input style="padding: 0.5rem"
                 type="text"
                 class="form-control"
                 id="name"
@@ -16,7 +16,7 @@
             </div>
             <br />
             <div class="form-group">
-              <input
+              <input style="padding: 0.5rem"
                 type="tel"
                 class="form-control"
                 id="telefono"
@@ -26,7 +26,7 @@
             </div>
             <br />
             <div class="form-group">
-              <input
+              <input style="padding: 0.5rem"
                 type="email"
                 class="form-control"
                 id="email"
@@ -36,7 +36,7 @@
             </div>
             <br />
             <div class="form-group">
-              <input
+              <input style="padding: 0.5rem"
                 type="text"
                 class="form-control"
                 id="address"
@@ -45,7 +45,7 @@
               />
             </div>
             <br />
-            <textarea class="form-control" id="specification" placeholder="Especificaciones (Opcional)" type="text" name="Text1" cols="40" rows="5" v-model="specification"></textarea>
+            <textarea style="padding: 0.5rem" class="form-control" id="specification" placeholder="Especificaciones (Opcional)" type="text" name="Text1" cols="40" rows="5" v-model="specification"></textarea>
           </form>
         </div>
       </div>
@@ -54,7 +54,7 @@
           <h2>Quién lo recibirá</h2>
           <form @submit.prevent="onSubmit" class="mt-3">
             <div class="form-group">
-              <input
+              <input style="padding: 0.5rem"
                 type="text"
                 class="form-control"
                 id="addresse"
@@ -63,7 +63,7 @@
               />
             </div>
             <br />
-            <textarea class="form-control" name="dedication" id="dedication" placeholder="Dedicatoria" cols="40" rows="5" v-model="dedication"></textarea>
+            <textarea style="padding: 0.5rem" class="form-control" name="dedication" id="dedication" placeholder="Dedicatoria" cols="40" rows="5" v-model="dedication"></textarea>
           </form>
         </div>
       </div>
@@ -82,7 +82,7 @@
                     {{ item.name }}
                     <p
                       class="float-right m-lg-auto-2 delete"
-                      @click="$store.commit('removeFromCart', item)"
+                      @click="$store.commit('deleteFromBox', item)"
                     >
                       &times;
                     </p>
