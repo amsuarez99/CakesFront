@@ -28,7 +28,7 @@ export default {
   name: 'CakeCatalog',
   components: {
     CardComponent,
-    MiniCart
+    MiniCart,
   },
   mounted() {
     this.fetchPasteles()

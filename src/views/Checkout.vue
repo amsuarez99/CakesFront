@@ -80,7 +80,7 @@
       </div>
     </div>
   </div>
-  <br>
+  <brfalse>
   <div class="precio">
     <h4 class="mb-3">Subtotal: ${{ $store.getters.totalPrice }}</h4>
     <h4 class="mb-3">Total + cobro por venta online: ${{ $store.getters.totalPriceWithTax }}</h4>
@@ -115,7 +115,7 @@ export default {
       }else{
         // data = {id:10, id:3}
         console.log(this.$store.state.cart);
-        let test = true;
+        let test = false;
         let local = test ? "http://localhost:8080/api/" : Constants.API;
         let data = this.$store.state.cart.map((item) => ({
           [item.id]: item.productQuantity,
