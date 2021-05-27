@@ -115,7 +115,7 @@ export default {
       }else{
         // data = {id:10, id:3}
         console.log(this.$store.state.cart);
-        let test = false;
+        let test = true;
         let local = test ? "http://localhost:8080/api/" : Constants.API;
         let data = this.$store.state.cart.map((item) => ({
           [item.id]: item.productQuantity,

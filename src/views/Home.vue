@@ -107,7 +107,8 @@ export default {
   },
   mounted (){
     (function(d, m){
-      var kommunicateSettings = {"appId":"1731a868491b9a64cc451a3f8887e7400","popupWidget":true,"automaticChatOpenOnNavigation":true};
+      var kommunicateSettings =
+          {"appId":"86ca324ffa6929099db80cb40448f7f5","popupWidget":true,"automaticChatOpenOnNavigation":true};
       var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
       s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
       var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
